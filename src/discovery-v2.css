@@ -1,0 +1,233 @@
+/* Discovery V2 dialog only. V1 is unchanged.
+   Surface, then centered copy, a still hold, then the video row grows
+   and pushes the copy up. Playback starts after that push. */
+
+.disc-v2 {
+  position: relative;
+}
+
+.disc-v2 .disc-scrim {
+  animation: disc-v2-scrim var(--v2-surface-ms, 250ms) ease both;
+  inset: 0;
+  overflow: hidden;
+  padding: 24px;
+  position: fixed;
+  z-index: 40;
+}
+
+.disc-v2 .disc-dialog {
+  align-items: center;
+  animation: disc-v2-surface var(--v2-surface-ms, 250ms) cubic-bezier(0.22, 1, 0.36, 1) both;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  max-height: none;
+  max-width: none;
+  padding: 0;
+  width: 100%;
+}
+
+.disc-v2-fit {
+  flex: none;
+  position: relative;
+}
+
+.disc-v2-canvas {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+@keyframes disc-v2-scrim {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes disc-v2-surface {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.disc-v2-sizer {
+  display: none;
+}
+
+.disc-v2-stage {
+  align-items: center;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  left: 40px;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+
+.disc-v2-body {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+  width: 100%;
+}
+
+.disc-v2-stage > .disc-gotit {
+  flex-shrink: 0;
+}
+
+.disc-v2-piece {
+  animation-name: disc-v2-in;
+  animation-duration: var(--v2-badge-ms, 360ms);
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+.disc-v2-piece--badge {
+  animation-delay: var(--v2-badge-delay, 250ms);
+  animation-duration: var(--v2-badge-ms, 360ms);
+}
+
+.disc-v2-piece--title {
+  animation-delay: var(--v2-title-delay, 330ms);
+  animation-duration: var(--v2-title-ms, 360ms);
+}
+
+.disc-v2-piece--sub {
+  animation-delay: var(--v2-sub-delay, 410ms);
+  animation-duration: var(--v2-sub-ms, 360ms);
+}
+
+@keyframes disc-v2-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.disc-v2-reveal {
+  display: grid;
+  flex-shrink: 0;
+  grid-template-rows: 0fr;
+  min-height: 0;
+  width: min(1200px, 100%);
+}
+
+.disc-v2-reveal.is-on {
+  animation-name: disc-v2-grow;
+  animation-duration: var(--v2-reveal-ms, 450ms);
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes disc-v2-grow {
+  from {
+    grid-template-rows: 0fr;
+  }
+
+  to {
+    grid-template-rows: 1fr;
+  }
+}
+
+.disc-v2-reveal__clip {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.disc-v2-reveal.is-on .disc-v2-reveal__clip {
+  animation-name: disc-v2-unclip;
+  animation-duration: 1ms;
+  animation-delay: var(--v2-reveal-ms, 450ms);
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.disc-v2-reveal .disc-video {
+  margin: 28px 0;
+  position: relative;
+  width: 100%;
+}
+
+button.disc-play {
+  align-items: center;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid #dce2e8;
+  border-radius: 57px;
+  bottom: 24px;
+  box-shadow:
+    0 1.5px 3px rgba(0, 0, 0, 0.08),
+    0 8px 18px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  display: flex;
+  height: 54px;
+  justify-content: center;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  right: 24px;
+  transition: opacity 160ms cubic-bezier(0.22, 1, 0.36, 1);
+  width: 54px;
+  z-index: 2;
+}
+
+.disc-video.is-ended:hover button.disc-play,
+.disc-video.is-ended:focus-within button.disc-play {
+  opacity: 1;
+}
+
+button.disc-play img {
+  display: block;
+  flex: none;
+}
+
+@keyframes disc-v2-unclip {
+  to {
+    overflow: visible;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .disc-v2 .disc-scrim,
+  .disc-v2 .disc-dialog,
+  .disc-v2-piece,
+  .disc-v2-reveal,
+  .disc-v2-reveal__clip {
+    animation: none;
+  }
+
+  .disc-v2 .disc-scrim,
+  .disc-v2 .disc-dialog,
+  .disc-v2-piece {
+    opacity: 1;
+    transform: none;
+  }
+
+  .disc-v2-reveal {
+    grid-template-rows: 1fr;
+  }
+
+  .disc-v2-reveal__clip {
+    overflow: visible;
+  }
+}

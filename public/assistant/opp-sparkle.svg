@@ -1,0 +1,32 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="220" height="140" viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Sparkle burst &#194;&#183; animation area">
+<circle id="Glow" cx="110" cy="70" r="70" fill="url(#paint0_radial_0_458)"/>
+<g id="Icon / Telescope-2">
+<path id="Vector" d="M107.097 70.7394L97.8274 72.7164C97.4675 72.7944 97.0914 72.7277 96.7804 72.5307C96.4694 72.3336 96.2484 72.0221 96.1654 71.6634L95.3599 68.4384C95.2652 68.0498 95.3189 67.6399 95.5107 67.2889C95.7024 66.9379 96.0182 66.6711 96.3964 66.5409L116.652 59.8809M112.34 69.6205L118.838 68.2345M116 83.5001L111.343 74.1851M101.237 64.9496L102.908 71.6336M104 83.5001L108.657 74.1851M116.727 60.9102C116.535 60.1384 116.656 59.3216 117.065 58.6395C117.475 57.9574 118.138 57.4657 118.91 57.2727L120.545 56.8647C120.931 56.7685 121.339 56.8293 121.68 57.0337C122.02 57.2382 122.266 57.5696 122.363 57.9552L124.635 67.0452C124.732 67.4311 124.671 67.8395 124.467 68.1808C124.262 68.522 123.931 68.768 123.545 68.8647L121.91 69.2727C121.138 69.4655 120.321 69.3439 119.639 68.9346C118.957 68.5253 118.465 67.8619 118.272 67.0902L116.727 60.9102ZM113 71.5C113 73.1569 111.657 74.5 110 74.5C108.343 74.5 107 73.1569 107 71.5C107 69.8431 108.343 68.5 110 68.5C111.657 68.5 113 69.8431 113 71.5Z" stroke="url(#paint1_linear_0_458)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<path id="Sparkle 1" d="M54 32L55.5839 38.4161L62 40L55.5839 41.5839L54 48L52.4161 41.5839L46 40L52.4161 38.4161L54 32Z" fill="#2B75BD"/>
+<path id="Sparkle 2" d="M165.5 26L166.589 30.4111L171 31.5L166.589 32.5889L165.5 37L164.411 32.5889L160 31.5L164.411 30.4111L165.5 26Z" fill="#1366B6"/>
+<path id="Sparkle 3" d="M38.5 84L39.391 87.609L43 88.5L39.391 89.391L38.5 93L37.609 89.391L34 88.5L37.609 87.609L38.5 84Z" fill="#BBD1EA"/>
+<path id="Sparkle 4" d="M177 80L178.782 87.2181L186 89L178.782 90.7819L177 98L175.218 90.7819L168 89L175.218 87.2181L177 80Z" fill="#2B75BD"/>
+<path id="Sparkle 5" d="M121.5 12L122.193 14.807L125 15.5L122.193 16.193L121.5 19L120.807 16.193L118 15.5L120.807 14.807L121.5 12Z" fill="#BBD1EA"/>
+<path id="Sparkle 6" d="M73.5 108L74.193 110.807L77 111.5L74.193 112.193L73.5 115L72.807 112.193L70 111.5L72.807 110.807L73.5 108Z" fill="#1366B6"/>
+<path id="Sparkle 7" d="M151 110L151.99 114.01L156 115L151.99 115.99L151 120L150.01 115.99L146 115L150.01 114.01L151 110Z" fill="#BBD1EA"/>
+<path id="Sparkle 8" d="M25 54L25.594 56.406L28 57L25.594 57.594L25 60L24.406 57.594L22 57L24.406 56.406L25 54Z" fill="#1366B6"/>
+<path id="Sparkle 9" d="M199 54L199.594 56.406L202 57L199.594 57.594L199 60L198.406 57.594L196 57L198.406 56.406L199 54Z" fill="#BBD1EA"/>
+<circle id="Dot" cx="61.5" cy="61.5" r="1.5" fill="#BBD1EA"/>
+<circle id="Dot_2" cx="151.5" cy="57.5" r="1.5" fill="#BBD1EA"/>
+<circle id="Dot_3" cx="101.25" cy="119.25" r="1.25" fill="#BBD1EA"/>
+<circle id="Dot_4" cx="185.25" cy="107.25" r="1.25" fill="#BBD1EA"/>
+<circle id="Dot_5" cx="13" cy="101" r="1" fill="#BBD1EA"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_0_458" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(110 70) scale(70)">
+<stop stop-color="#BBD1EA" stop-opacity="0.55"/>
+<stop offset="1" stop-color="#BBD1EA" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="paint1_linear_0_458" x1="124.68" y1="58.7534" x2="97.9306" y2="86.0628" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1366B6"/>
+<stop offset="1" stop-color="#0A335B"/>
+</linearGradient>
+</defs>
+</svg>

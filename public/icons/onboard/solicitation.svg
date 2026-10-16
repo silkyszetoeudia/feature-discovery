@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="xMidYMid meet" overflow="visible" style="display: block;" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ProjectAppIcon/Solicitation">
+<g clip-path="url(#clip0_0_36)">
+<rect width="36" height="36" rx="18" fill="#DFDCD9"/>
+<path id="Solicitation BG" d="M36 0H0V36H36V0Z" fill="#DFDCD9"/>
+<path id="Vector" d="M27.3465 11.7538H22.8045V9.71584C22.8045 8.62963 21.9768 7.75032 20.9473 7.75032H15.0527C14.0333 7.75032 13.1955 8.62963 13.1955 9.71584V11.7538H8.66355C7.85607 11.7538 7.2 12.4262 7.2 13.2538V24.2503C7.2 25.0779 7.85607 25.7503 8.66355 25.7503H27.3465C28.154 25.7503 28.8101 25.0779 28.8101 24.2503V13.2434C28.8101 12.4158 28.154 11.7434 27.3465 11.7434V11.7538ZM14.7196 9.7055C14.7196 9.47791 14.871 9.2917 15.0628 9.2917H20.9574C21.1492 9.2917 21.3006 9.47791 21.3006 9.7055V11.7434H14.7297V9.7055H14.7196ZM16.3649 22.9572L12.8624 19.3572L14.2856 17.8986L16.3649 20.0296L21.7144 14.5469L23.1376 16.0055L16.3548 22.9572H16.3649Z" fill="#767067"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_36">
+<rect width="36" height="36" rx="18" fill="white"/>
+</clipPath>
+</defs>
+</svg>

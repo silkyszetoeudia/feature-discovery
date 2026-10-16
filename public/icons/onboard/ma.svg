@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="xMidYMid meet" overflow="visible" style="display: block;" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ProjectAppIcon/M&#38;A">
+<g clip-path="url(#clip0_0_44)">
+<path id="M&#38;A BG" d="M36 0H0V36H36V0Z" fill="#DFDCD9"/>
+<g id="Group">
+<path id="Vector" d="M15.2386 15.2386H8.79542C8.28917 15.2386 7.87497 15.6528 7.87497 16.1591V27.2045C7.87497 27.7108 8.28917 28.125 8.79542 28.125H19.8409C20.3471 28.125 20.7613 27.7108 20.7613 27.2045V20.7613H16.1591C15.6528 20.7613 15.2386 20.3471 15.2386 19.8409V15.2386Z" fill="#767067"/>
+<path id="Vector_2" d="M27.2045 7.875H16.159C15.6528 7.875 15.2386 8.2892 15.2386 8.79545V15.2386H19.8409C20.3471 15.2386 20.7613 15.6528 20.7613 16.1591V20.7614H27.2045C27.7107 20.7614 28.1249 20.3472 28.1249 19.8409V8.79545C28.1249 8.2892 27.7107 7.875 27.2045 7.875Z" fill="#767067"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_44">
+<rect width="36" height="36" rx="18" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,947 @@
+/**
+ * Product app design tokens (light). Copied from the web app theme.
+ * Tailwind @theme / @apply blocks omitted — Docusaurus uses these as plain CSS variables.
+ */
+
+/* --- Primitive color tokens (Collection 1) --- */
+:root {
+  --opacity-opacity-disabled: 0.5;
+
+  /* eudia colors / primary / circuit-green */
+  --eudia-colors-primary-circuit-green-50: oklch(0.953 0.012 210.12);
+  --eudia-colors-primary-circuit-green-100: oklch(0.908 0.023 210.56);
+  --eudia-colors-primary-circuit-green-150: oklch(0.861 0.035 210.32);
+  --eudia-colors-primary-circuit-green-200: oklch(0.815 0.046 210.58);
+  --eudia-colors-primary-circuit-green-250: oklch(0.766 0.057 212.23);
+  --eudia-colors-primary-circuit-green-300: oklch(0.719 0.067 212.14);
+  --eudia-colors-primary-circuit-green-350: oklch(0.674 0.076 212.52);
+  --eudia-colors-primary-circuit-green-400: oklch(0.628 0.084 213.03);
+  --eudia-colors-primary-circuit-green-450: oklch(0.584 0.089 214.15);
+  --eudia-colors-primary-circuit-green-500: oklch(0.542 0.092 215.91);
+  --eudia-colors-primary-circuit-green-550: oklch(0.503 0.085 214.78);
+  --eudia-colors-primary-circuit-green-600: oklch(0.462 0.078 215.85);
+  --eudia-colors-primary-circuit-green-650: oklch(0.422 0.071 215.71);
+  --eudia-colors-primary-circuit-green-700: oklch(0.378 0.063 215.8);
+  --eudia-colors-primary-circuit-green-750: oklch(0.337 0.055 215.8);
+  --eudia-colors-primary-circuit-green-800: oklch(0.293 0.046 213.49);
+  --eudia-colors-primary-circuit-green-850: oklch(0.246 0.038 215.79);
+  --eudia-colors-primary-circuit-green-900: oklch(0.198 0.029 211.47);
+  --eudia-colors-primary-circuit-green-950: oklch(0.144 0.02 214.49);
+
+  /* eudia colors / secondary / terra-coral */
+  --eudia-colors-secondary-terra-coral-50: oklch(0.956 0.014 46.02);
+  --eudia-colors-secondary-terra-coral-100: oklch(0.912 0.029 41.64);
+  --eudia-colors-secondary-terra-coral-150: oklch(0.868 0.044 42.95);
+  --eudia-colors-secondary-terra-coral-200: oklch(0.823 0.06 41.94);
+  --eudia-colors-secondary-terra-coral-250: oklch(0.781 0.078 43.08);
+  --eudia-colors-secondary-terra-coral-300: oklch(0.739 0.094 43.3);
+  --eudia-colors-secondary-terra-coral-350: oklch(0.696 0.111 42.5);
+  --eudia-colors-secondary-terra-coral-400: oklch(0.656 0.128 42.42);
+  --eudia-colors-secondary-terra-coral-450: oklch(0.617 0.146 41.22);
+  --eudia-colors-secondary-terra-coral-500: oklch(0.581 0.161 40.24);
+  --eudia-colors-secondary-terra-coral-550: oklch(0.539 0.147 40.31);
+  --eudia-colors-secondary-terra-coral-600: oklch(0.495 0.134 40.68);
+  --eudia-colors-secondary-terra-coral-650: oklch(0.452 0.121 40.61);
+  --eudia-colors-secondary-terra-coral-700: oklch(0.406 0.106 41.16);
+  --eudia-colors-secondary-terra-coral-750: oklch(0.359 0.091 41.4);
+  --eudia-colors-secondary-terra-coral-800: oklch(0.309 0.076 40.5);
+  --eudia-colors-secondary-terra-coral-850: oklch(0.258 0.06 41.45);
+  --eudia-colors-secondary-terra-coral-900: oklch(0.207 0.044 41.35);
+  --eudia-colors-secondary-terra-coral-950: oklch(0.151 0.026 50.89);
+
+  /* eudia colors / secondary / clarity-depth */
+  --eudia-colors-secondary-clarity-depth-50: oklch(0.951 0.015 244.83);
+  --eudia-colors-secondary-clarity-depth-100: oklch(0.9 0.028 248.18);
+  --eudia-colors-secondary-clarity-depth-150: oklch(0.85 0.043 247.27);
+  --eudia-colors-secondary-clarity-depth-200: oklch(0.801 0.058 247.77);
+  --eudia-colors-secondary-clarity-depth-250: oklch(0.749 0.074 248.86);
+  --eudia-colors-secondary-clarity-depth-300: oklch(0.699 0.089 248.22);
+  --eudia-colors-secondary-clarity-depth-350: oklch(0.65 0.104 248.92);
+  --eudia-colors-secondary-clarity-depth-400: oklch(0.602 0.12 249.53);
+  --eudia-colors-secondary-clarity-depth-450: oklch(0.553 0.133 251.13);
+  --eudia-colors-secondary-clarity-depth-500: oklch(0.508 0.146 252.93);
+  --eudia-colors-secondary-clarity-depth-550: oklch(0.472 0.135 252.74);
+  --eudia-colors-secondary-clarity-depth-600: oklch(0.436 0.123 252.5);
+  --eudia-colors-secondary-clarity-depth-650: oklch(0.395 0.11 252.49);
+  --eudia-colors-secondary-clarity-depth-700: oklch(0.357 0.097 252.16);
+  --eudia-colors-secondary-clarity-depth-750: oklch(0.317 0.084 252.01);
+  --eudia-colors-secondary-clarity-depth-800: oklch(0.277 0.07 251.43);
+  --eudia-colors-secondary-clarity-depth-850: oklch(0.235 0.056 250.36);
+  --eudia-colors-secondary-clarity-depth-900: oklch(0.187 0.04 249.01);
+  --eudia-colors-secondary-clarity-depth-950: oklch(0.139 0.024 241.36);
+
+  /* eudia colors / secondary / golden-amber */
+  --eudia-colors-secondary-golden-amber-50: oklch(0.957 0.013 82.4);
+  --eudia-colors-secondary-golden-amber-100: oklch(0.913 0.028 83.54);
+  --eudia-colors-secondary-golden-amber-150: oklch(0.871 0.042 85.29);
+  --eudia-colors-secondary-golden-amber-200: oklch(0.826 0.056 85.03);
+  --eudia-colors-secondary-golden-amber-250: oklch(0.782 0.069 84.31);
+  --eudia-colors-secondary-golden-amber-300: oklch(0.739 0.083 82.82);
+  --eudia-colors-secondary-golden-amber-350: oklch(0.694 0.095 82.31);
+  --eudia-colors-secondary-golden-amber-400: oklch(0.652 0.106 81.92);
+  --eudia-colors-secondary-golden-amber-450: oklch(0.608 0.113 79.92);
+  --eudia-colors-secondary-golden-amber-500: oklch(0.565 0.115 76.24);
+  --eudia-colors-secondary-golden-amber-550: oklch(0.523 0.106 76.47);
+  --eudia-colors-secondary-golden-amber-600: oklch(0.483 0.098 77.06);
+  --eudia-colors-secondary-golden-amber-650: oklch(0.439 0.088 77.44);
+  --eudia-colors-secondary-golden-amber-700: oklch(0.396 0.079 76.97);
+  --eudia-colors-secondary-golden-amber-750: oklch(0.352 0.069 79.05);
+  --eudia-colors-secondary-golden-amber-800: oklch(0.304 0.059 80.55);
+  --eudia-colors-secondary-golden-amber-850: oklch(0.256 0.049 80.64);
+  --eudia-colors-secondary-golden-amber-900: oklch(0.203 0.038 83.31);
+  --eudia-colors-secondary-golden-amber-950: oklch(0.152 0.027 90.64);
+
+  /* eudia colors / secondary / laurel-shade */
+  --eudia-colors-secondary-laurel-shade-50: oklch(0.956 0.014 120.49);
+  --eudia-colors-secondary-laurel-shade-100: oklch(0.911 0.029 122.11);
+  --eudia-colors-secondary-laurel-shade-150: oklch(0.866 0.043 121.91);
+  --eudia-colors-secondary-laurel-shade-200: oklch(0.82 0.059 122.72);
+  --eudia-colors-secondary-laurel-shade-250: oklch(0.775 0.073 122.84);
+  --eudia-colors-secondary-laurel-shade-300: oklch(0.73 0.087 123.13);
+  --eudia-colors-secondary-laurel-shade-350: oklch(0.683 0.102 124);
+  --eudia-colors-secondary-laurel-shade-400: oklch(0.637 0.115 124.58);
+  --eudia-colors-secondary-laurel-shade-450: oklch(0.59 0.126 125.78);
+  --eudia-colors-secondary-laurel-shade-500: oklch(0.544 0.132 127.01);
+  --eudia-colors-secondary-laurel-shade-550: oklch(0.506 0.122 127.04);
+  --eudia-colors-secondary-laurel-shade-600: oklch(0.465 0.111 126.71);
+  --eudia-colors-secondary-laurel-shade-650: oklch(0.426 0.1 126.73);
+  --eudia-colors-secondary-laurel-shade-700: oklch(0.383 0.088 126.26);
+  --eudia-colors-secondary-laurel-shade-750: oklch(0.341 0.077 126.22);
+  --eudia-colors-secondary-laurel-shade-800: oklch(0.294 0.066 126.28);
+  --eudia-colors-secondary-laurel-shade-850: oklch(0.25 0.054 126.18);
+  --eudia-colors-secondary-laurel-shade-900: oklch(0.2 0.04 124.57);
+  --eudia-colors-secondary-laurel-shade-950: oklch(0.15 0.028 122.71);
+
+  /* eudia colors / secondary / lavender-integrity */
+  --eudia-colors-secondary-lavender-integrity-50: oklch(0.959 0.01 298.95);
+  --eudia-colors-secondary-lavender-integrity-100: oklch(0.919 0.017 297.35);
+  --eudia-colors-secondary-lavender-integrity-150: oklch(0.876 0.026 295.42);
+  --eudia-colors-secondary-lavender-integrity-200: oklch(0.833 0.035 296.56);
+  --eudia-colors-secondary-lavender-integrity-250: oklch(0.79 0.046 296.75);
+  --eudia-colors-secondary-lavender-integrity-300: oklch(0.749 0.055 295.87);
+  --eudia-colors-secondary-lavender-integrity-350: oklch(0.704 0.065 296.14);
+  --eudia-colors-secondary-lavender-integrity-400: oklch(0.659 0.076 295.01);
+  --eudia-colors-secondary-lavender-integrity-450: oklch(0.616 0.084 294.43);
+  --eudia-colors-secondary-lavender-integrity-500: oklch(0.571 0.096 294.06);
+  --eudia-colors-secondary-lavender-integrity-550: oklch(0.53 0.089 294.44);
+  --eudia-colors-secondary-lavender-integrity-600: oklch(0.487 0.081 293.97);
+  --eudia-colors-secondary-lavender-integrity-650: oklch(0.445 0.072 293.71);
+  --eudia-colors-secondary-lavender-integrity-700: oklch(0.401 0.064 294.22);
+  --eudia-colors-secondary-lavender-integrity-750: oklch(0.356 0.055 294.91);
+  --eudia-colors-secondary-lavender-integrity-800: oklch(0.307 0.045 294.62);
+  --eudia-colors-secondary-lavender-integrity-850: oklch(0.258 0.036 295.87);
+  --eudia-colors-secondary-lavender-integrity-900: oklch(0.21 0.024 295.73);
+  --eudia-colors-secondary-lavender-integrity-950: oklch(0.154 0.013 292.45);
+
+  /* eudia colors / secondary / siren-blush */
+  --eudia-colors-secondary-siren-blush-50: oklch(0.955 0.016 347.34);
+  --eudia-colors-secondary-siren-blush-100: oklch(0.909 0.032 346.96);
+  --eudia-colors-secondary-siren-blush-150: oklch(0.866 0.048 347.17);
+  --eudia-colors-secondary-siren-blush-200: oklch(0.822 0.066 348.15);
+  --eudia-colors-secondary-siren-blush-250: oklch(0.777 0.083 348.6);
+  --eudia-colors-secondary-siren-blush-300: oklch(0.733 0.101 349.59);
+  --eudia-colors-secondary-siren-blush-350: oklch(0.69 0.12 350.64);
+  --eudia-colors-secondary-siren-blush-400: oklch(0.651 0.137 351.45);
+  --eudia-colors-secondary-siren-blush-450: oklch(0.61 0.154 352.51);
+  --eudia-colors-secondary-siren-blush-500: oklch(0.574 0.17 354.12);
+  --eudia-colors-secondary-siren-blush-550: oklch(0.531 0.157 354.19);
+  --eudia-colors-secondary-siren-blush-600: oklch(0.49 0.142 353.88);
+  --eudia-colors-secondary-siren-blush-650: oklch(0.444 0.127 353.57);
+  --eudia-colors-secondary-siren-blush-700: oklch(0.399 0.113 353.61);
+  --eudia-colors-secondary-siren-blush-750: oklch(0.355 0.097 353.04);
+  --eudia-colors-secondary-siren-blush-800: oklch(0.307 0.081 353.01);
+  --eudia-colors-secondary-siren-blush-850: oklch(0.257 0.065 353);
+  --eudia-colors-secondary-siren-blush-900: oklch(0.203 0.046 351.83);
+  --eudia-colors-secondary-siren-blush-950: oklch(0.151 0.025 348.42);
+
+  /* eudia colors / neutral / orion-veil */
+  --eudia-colors-neutral-orion-veil-50: oklch(0.957 0.003 229.82);
+  --eudia-colors-neutral-orion-veil-100: oklch(0.91 0.005 229.32);
+  --eudia-colors-neutral-orion-veil-150: oklch(0.866 0.008 229.18);
+  --eudia-colors-neutral-orion-veil-200: oklch(0.822 0.011 229.14);
+  --eudia-colors-neutral-orion-veil-250: oklch(0.775 0.014 221.66);
+  --eudia-colors-neutral-orion-veil-300: oklch(0.727 0.016 229.18);
+  --eudia-colors-neutral-orion-veil-350: oklch(0.68 0.018 225.43);
+  --eudia-colors-neutral-orion-veil-400: oklch(0.633 0.021 226);
+  --eudia-colors-neutral-orion-veil-450: oklch(0.582 0.025 229.47);
+  --eudia-colors-neutral-orion-veil-500: oklch(0.532 0.028 226.97);
+  --eudia-colors-neutral-orion-veil-550: oklch(0.496 0.031 227.41);
+  --eudia-colors-neutral-orion-veil-600: oklch(0.46 0.032 226.48);
+  --eudia-colors-neutral-orion-veil-650: oklch(0.423 0.035 227.1);
+  --eudia-colors-neutral-orion-veil-700: oklch(0.382 0.038 228.71);
+  --eudia-colors-neutral-orion-veil-750: oklch(0.344 0.04 230.35);
+  --eudia-colors-neutral-orion-veil-800: oklch(0.305 0.042 229.52);
+  --eudia-colors-neutral-orion-veil-850: oklch(0.267 0.034 228.37);
+  --eudia-colors-neutral-orion-veil-900: oklch(0.227 0.027 225.36);
+  --eudia-colors-neutral-orion-veil-950: oklch(0.184 0.02 233.23);
+
+  /* eudia colors / neutral / cloud-veil */
+  --eudia-colors-neutral-cloud-veil-0: oklch(1 0 263.28);
+  --eudia-colors-neutral-cloud-veil-50: oklch(0.985 0.002 248.57);
+  --eudia-colors-neutral-cloud-veil-100: oklch(0.955 0.002 248.55);
+  --eudia-colors-neutral-cloud-veil-150: oklch(0.909 0.002 248.51);
+  --eudia-colors-neutral-cloud-veil-200: oklch(0.872 0.001 200.65);
+  --eudia-colors-neutral-cloud-veil-250: oklch(0.832 0.002 248.44);
+  --eudia-colors-neutral-cloud-veil-300: oklch(0.792 0.001 285.31);
+  --eudia-colors-neutral-cloud-veil-350: oklch(0.754 0.002 248.38);
+  --eudia-colors-neutral-cloud-veil-400: oklch(0.715 0.001 199.89);
+  --eudia-colors-neutral-cloud-veil-450: oklch(0.673 0.002 248.31);
+  --eudia-colors-neutral-cloud-veil-500: oklch(0.63 0.002 285.56);
+  --eudia-colors-neutral-cloud-veil-550: oklch(0.59 0.002 285.62);
+  --eudia-colors-neutral-cloud-veil-600: oklch(0.548 0.001 199.12);
+  --eudia-colors-neutral-cloud-veil-650: oklch(0.503 0 263.28);
+  --eudia-colors-neutral-cloud-veil-700: oklch(0.459 0.001 198.72);
+  --eudia-colors-neutral-cloud-veil-750: oklch(0.413 0 263.28);
+  --eudia-colors-neutral-cloud-veil-800: oklch(0.367 0.001 198.32);
+  --eudia-colors-neutral-cloud-veil-850: oklch(0.317 0 263.28);
+  --eudia-colors-neutral-cloud-veil-900: oklch(0.265 0.002 286);
+  --eudia-colors-neutral-cloud-veil-950: oklch(0.213 0 263.28);
+  --eudia-colors-neutral-cloud-veil-1000: oklch(0 0 0);
+
+  /* eudia colors / neutral / slate-integrity */
+  --eudia-colors-neutral-slate-integrity-50: oklch(0.955 0.006 264.52);
+  --eudia-colors-neutral-slate-integrity-100: oklch(0.91 0.011 248.06);
+  --eudia-colors-neutral-slate-integrity-150: oklch(0.864 0.016 253.96);
+  --eudia-colors-neutral-slate-integrity-200: oklch(0.816 0.023 254.45);
+  --eudia-colors-neutral-slate-integrity-250: oklch(0.769 0.03 256.53);
+  --eudia-colors-neutral-slate-integrity-300: oklch(0.722 0.034 254.08);
+  --eudia-colors-neutral-slate-integrity-350: oklch(0.673 0.042 254.39);
+  --eudia-colors-neutral-slate-integrity-400: oklch(0.624 0.049 255.72);
+  --eudia-colors-neutral-slate-integrity-450: oklch(0.575 0.055 253.31);
+  --eudia-colors-neutral-slate-integrity-500: oklch(0.524 0.063 254.54);
+  --eudia-colors-neutral-slate-integrity-550: oklch(0.486 0.058 255.11);
+  --eudia-colors-neutral-slate-integrity-600: oklch(0.448 0.053 255.81);
+  --eudia-colors-neutral-slate-integrity-650: oklch(0.41 0.046 253.6);
+  --eudia-colors-neutral-slate-integrity-700: oklch(0.37 0.04 254.33);
+  --eudia-colors-neutral-slate-integrity-750: oklch(0.329 0.035 255.34);
+  --eudia-colors-neutral-slate-integrity-800: oklch(0.285 0.03 254.72);
+  --eudia-colors-neutral-slate-integrity-850: oklch(0.241 0.024 256.45);
+  --eudia-colors-neutral-slate-integrity-900: oklch(0.197 0.015 248.63);
+  --eudia-colors-neutral-slate-integrity-950: oklch(0.148 0.008 247.28);
+
+  /* eudia colors / neutral / warm-slate-integrity */
+  --eudia-colors-neutral-warm-slate-integrity-50: oklch(0.965 0.006 75.3);
+  --eudia-colors-neutral-warm-slate-integrity-100: oklch(0.932 0.003 67.42);
+  --eudia-colors-neutral-warm-slate-integrity-150: oklch(0.896 0.005 67.53);
+  --eudia-colors-neutral-warm-slate-integrity-200: oklch(0.862 0.006 75.31);
+  --eudia-colors-neutral-warm-slate-integrity-250: oklch(0.825 0.008 73.65);
+  --eudia-colors-neutral-warm-slate-integrity-300: oklch(0.791 0.011 76.54);
+  --eudia-colors-neutral-warm-slate-integrity-350: oklch(0.756 0.013 79.76);
+  --eudia-colors-neutral-warm-slate-integrity-400: oklch(0.718 0.015 78.22);
+  --eudia-colors-neutral-warm-slate-integrity-450: oklch(0.681 0.016 70.76);
+  --eudia-colors-neutral-warm-slate-integrity-500: oklch(0.644 0.019 76.02);
+  --eudia-colors-neutral-warm-slate-integrity-550: oklch(0.596 0.017 76.98);
+  --eudia-colors-neutral-warm-slate-integrity-600: oklch(0.548 0.016 78.18);
+  --eudia-colors-neutral-warm-slate-integrity-650: oklch(0.499 0.015 75.23);
+  --eudia-colors-neutral-warm-slate-integrity-700: oklch(0.448 0.013 76.47);
+  --eudia-colors-neutral-warm-slate-integrity-750: oklch(0.396 0.01 73.58);
+  --eudia-colors-neutral-warm-slate-integrity-800: oklch(0.342 0.008 75.27);
+  --eudia-colors-neutral-warm-slate-integrity-850: oklch(0.286 0.006 78.21);
+  --eudia-colors-neutral-warm-slate-integrity-900: oklch(0.228 0.005 67.52);
+  --eudia-colors-neutral-warm-slate-integrity-950: oklch(0.165 0.003 67.56);
+
+  /* eudia colors / alert / high-risk */
+  --eudia-colors-alert-high-risk-50: oklch(0.945 0.02 28.72);
+  --eudia-colors-alert-high-risk-100: oklch(0.891 0.042 26.95);
+  --eudia-colors-alert-high-risk-150: oklch(0.836 0.065 27.95);
+  --eudia-colors-alert-high-risk-200: oklch(0.785 0.09 27.77);
+  --eudia-colors-alert-high-risk-250: oklch(0.734 0.114 28.09);
+  --eudia-colors-alert-high-risk-300: oklch(0.687 0.138 29.72);
+  --eudia-colors-alert-high-risk-350: oklch(0.644 0.164 30.23);
+  --eudia-colors-alert-high-risk-400: oklch(0.604 0.186 31.1);
+  --eudia-colors-alert-high-risk-450: oklch(0.573 0.204 31.23);
+  --eudia-colors-alert-high-risk-500: oklch(0.548 0.214 30.87);
+  --eudia-colors-alert-high-risk-550: oklch(0.507 0.198 30.95);
+  --eudia-colors-alert-high-risk-600: oklch(0.465 0.18 31.19);
+  --eudia-colors-alert-high-risk-650: oklch(0.422 0.163 31.36);
+  --eudia-colors-alert-high-risk-700: oklch(0.379 0.144 31.8);
+  --eudia-colors-alert-high-risk-750: oklch(0.335 0.127 32.13);
+  --eudia-colors-alert-high-risk-800: oklch(0.288 0.107 32.73);
+  --eudia-colors-alert-high-risk-850: oklch(0.241 0.086 34.26);
+  --eudia-colors-alert-high-risk-900: oklch(0.189 0.065 36.04);
+  --eudia-colors-alert-high-risk-950: oklch(0.135 0.041 42.19);
+
+  /* eudia colors / alert / moderate-risk */
+  --eudia-colors-alert-moderate-risk-50: oklch(0.962 0.019 65.07);
+  --eudia-colors-alert-moderate-risk-100: oklch(0.926 0.039 66.03);
+  --eudia-colors-alert-moderate-risk-150: oklch(0.888 0.059 65.26);
+  --eudia-colors-alert-moderate-risk-200: oklch(0.851 0.078 63.92);
+  --eudia-colors-alert-moderate-risk-250: oklch(0.815 0.096 63.23);
+  --eudia-colors-alert-moderate-risk-300: oklch(0.781 0.115 63.07);
+  --eudia-colors-alert-moderate-risk-350: oklch(0.748 0.133 61.13);
+  --eudia-colors-alert-moderate-risk-400: oklch(0.715 0.148 58.82);
+  --eudia-colors-alert-moderate-risk-450: oklch(0.686 0.161 55.83);
+  --eudia-colors-alert-moderate-risk-500: oklch(0.658 0.171 51.29);
+  --eudia-colors-alert-moderate-risk-550: oklch(0.609 0.158 51.43);
+  --eudia-colors-alert-moderate-risk-600: oklch(0.558 0.144 51.89);
+  --eudia-colors-alert-moderate-risk-650: oklch(0.509 0.129 52.8);
+  --eudia-colors-alert-moderate-risk-700: oklch(0.455 0.115 53.65);
+  --eudia-colors-alert-moderate-risk-750: oklch(0.402 0.1 54.33);
+  --eudia-colors-alert-moderate-risk-800: oklch(0.346 0.085 55.32);
+  --eudia-colors-alert-moderate-risk-850: oklch(0.287 0.069 57.72);
+  --eudia-colors-alert-moderate-risk-900: oklch(0.228 0.052 63.14);
+  --eudia-colors-alert-moderate-risk-950: oklch(0.162 0.034 74.75);
+
+  /* eudia colors / alert / low-risk */
+  --eudia-colors-alert-low-risk-50: oklch(0.981 0.027 95.38);
+  --eudia-colors-alert-low-risk-100: oklch(0.963 0.052 94.12);
+  --eudia-colors-alert-low-risk-150: oklch(0.945 0.077 94.75);
+  --eudia-colors-alert-low-risk-200: oklch(0.929 0.1 94.23);
+  --eudia-colors-alert-low-risk-250: oklch(0.912 0.121 94.25);
+  --eudia-colors-alert-low-risk-300: oklch(0.898 0.14 94.69);
+  --eudia-colors-alert-low-risk-350: oklch(0.884 0.155 93.64);
+  --eudia-colors-alert-low-risk-400: oklch(0.869 0.166 92.71);
+  --eudia-colors-alert-low-risk-450: oklch(0.857 0.171 90.85);
+  --eudia-colors-alert-low-risk-500: oklch(0.844 0.172 88.87);
+  --eudia-colors-alert-low-risk-550: oklch(0.779 0.159 88.85);
+  --eudia-colors-alert-low-risk-600: oklch(0.715 0.146 89.43);
+  --eudia-colors-alert-low-risk-650: oklch(0.647 0.132 89.47);
+  --eudia-colors-alert-low-risk-700: oklch(0.579 0.118 90.31);
+  --eudia-colors-alert-low-risk-750: oklch(0.509 0.104 89.8);
+  --eudia-colors-alert-low-risk-800: oklch(0.435 0.089 89.96);
+  --eudia-colors-alert-low-risk-850: oklch(0.359 0.073 91.61);
+  --eudia-colors-alert-low-risk-900: oklch(0.277 0.057 92.59);
+  --eudia-colors-alert-low-risk-950: oklch(0.192 0.04 97.67);
+
+  /* eudia colors / alert / success */
+  --eudia-colors-alert-success-50: oklch(0.963 0.031 149.97);
+  --eudia-colors-alert-success-100: oklch(0.925 0.058 149.72);
+  --eudia-colors-alert-success-150: oklch(0.891 0.089 149.05);
+  --eudia-colors-alert-success-200: oklch(0.856 0.116 148.54);
+  --eudia-colors-alert-success-250: oklch(0.825 0.145 147.56);
+  --eudia-colors-alert-success-300: oklch(0.795 0.172 146.79);
+  --eudia-colors-alert-success-350: oklch(0.766 0.193 146.04);
+  --eudia-colors-alert-success-400: oklch(0.741 0.212 145.12);
+  --eudia-colors-alert-success-450: oklch(0.717 0.224 144.25);
+  --eudia-colors-alert-success-500: oklch(0.698 0.231 143.38);
+  --eudia-colors-alert-success-550: oklch(0.646 0.213 143.43);
+  --eudia-colors-alert-success-600: oklch(0.592 0.195 143.5);
+  --eudia-colors-alert-success-650: oklch(0.538 0.177 143.59);
+  --eudia-colors-alert-success-700: oklch(0.482 0.158 143.72);
+  --eudia-colors-alert-success-750: oklch(0.425 0.138 144.03);
+  --eudia-colors-alert-success-800: oklch(0.362 0.116 144.41);
+  --eudia-colors-alert-success-850: oklch(0.299 0.094 145.02);
+  --eudia-colors-alert-success-900: oklch(0.234 0.071 146.08);
+  --eudia-colors-alert-success-950: oklch(0.163 0.047 147.94);
+
+  /* eudia colors / alert / information */
+  --eudia-colors-alert-information-50: oklch(0.974 0.014 238.15);
+  --eudia-colors-alert-information-100: oklch(0.948 0.028 238.31);
+  --eudia-colors-alert-information-150: oklch(0.923 0.042 239.47);
+  --eudia-colors-alert-information-200: oklch(0.897 0.056 239.51);
+  --eudia-colors-alert-information-250: oklch(0.872 0.07 239.71);
+  --eudia-colors-alert-information-300: oklch(0.848 0.084 240.01);
+  --eudia-colors-alert-information-350: oklch(0.824 0.098 240.43);
+  --eudia-colors-alert-information-400: oklch(0.801 0.111 241.26);
+  --eudia-colors-alert-information-450: oklch(0.778 0.124 241.88);
+  --eudia-colors-alert-information-500: oklch(0.756 0.137 242.67);
+  --eudia-colors-alert-information-550: oklch(0.698 0.125 242.68);
+  --eudia-colors-alert-information-600: oklch(0.642 0.114 242.66);
+  --eudia-colors-alert-information-650: oklch(0.581 0.102 242.67);
+  --eudia-colors-alert-information-700: oklch(0.521 0.091 242.3);
+  --eudia-colors-alert-information-750: oklch(0.461 0.078 242.21);
+  --eudia-colors-alert-information-800: oklch(0.394 0.065 242.16);
+  --eudia-colors-alert-information-850: oklch(0.328 0.052 241.3);
+  --eudia-colors-alert-information-900: oklch(0.255 0.037 240.86);
+  --eudia-colors-alert-information-950: oklch(0.181 0.021 239.86);
+
+  /* eudia colors / alert / eudia-yellow */
+  --eudia-colors-alert-eudia-yellow-50: oklch(0.969 0.021 83.27);
+  --eudia-colors-alert-eudia-yellow-100: oklch(0.942 0.043 83.22);
+  --eudia-colors-alert-eudia-yellow-150: oklch(0.912 0.064 83.08);
+  --eudia-colors-alert-eudia-yellow-200: oklch(0.886 0.084 82.8);
+  --eudia-colors-alert-eudia-yellow-250: oklch(0.859 0.103 81.43);
+  --eudia-colors-alert-eudia-yellow-300: oklch(0.831 0.121 80.74);
+  --eudia-colors-alert-eudia-yellow-350: oklch(0.807 0.136 79.58);
+  --eudia-colors-alert-eudia-yellow-400: oklch(0.781 0.147 77.69);
+  --eudia-colors-alert-eudia-yellow-450: oklch(0.757 0.154 75.34);
+  --eudia-colors-alert-eudia-yellow-500: oklch(0.734 0.158 71.03);
+  --eudia-colors-alert-eudia-yellow-550: oklch(0.679 0.146 71.26);
+  --eudia-colors-alert-eudia-yellow-600: oklch(0.623 0.134 71.55);
+  --eudia-colors-alert-eudia-yellow-650: oklch(0.565 0.121 71.91);
+  --eudia-colors-alert-eudia-yellow-700: oklch(0.506 0.108 72.37);
+  --eudia-colors-alert-eudia-yellow-750: oklch(0.447 0.095 74.1);
+  --eudia-colors-alert-eudia-yellow-800: oklch(0.384 0.081 75.25);
+  --eudia-colors-alert-eudia-yellow-850: oklch(0.318 0.067 77.03);
+  --eudia-colors-alert-eudia-yellow-900: oklch(0.249 0.051 80.16);
+  --eudia-colors-alert-eudia-yellow-950: oklch(0.174 0.036 86.98);
+}
+
+/* --- Semantic tokens / Light mode (Collection 3) --- */
+:root {
+  --base-active: var(--eudia-colors-neutral-cloud-veil-100);
+  --base-active-hover: var(--eudia-colors-neutral-cloud-veil-150);
+  --base-active-foreground: var(--base-foreground);
+  --base-hover: var(--eudia-colors-neutral-cloud-veil-50);
+  --base-menu-active: var(--base-sec-sidebar-active);
+  --base-menu-hover: var(--base-sec-sidebar-hover);
+  --base-background: var(--eudia-colors-neutral-cloud-veil-0);
+  --base-border: var(--eudia-colors-neutral-slate-integrity-100);
+  --base-card: var(--base-background);
+  --base-container: var(--eudia-colors-neutral-cloud-veil-50);
+  --base-card-foreground: var(--base-foreground);
+  --base-foreground: var(--eudia-colors-neutral-orion-veil-850);
+  --base-input: var(--eudia-colors-neutral-slate-integrity-200);
+  --base-muted: var(--eudia-colors-neutral-cloud-veil-100);
+  --base-muted-foreground: var(--eudia-colors-neutral-orion-veil-500);
+  --base-popover: var(--base-background);
+  --base-popover-foreground: var(--base-foreground);
+  --base-primary: var(--eudia-colors-primary-circuit-green-500);
+  --base-primary-foreground: var(--eudia-colors-neutral-cloud-veil-0);
+  --base-primary-hover: var(--eudia-colors-primary-circuit-green-550);
+  --base-primary-active: var(--eudia-colors-primary-circuit-green-600);
+  --base-primary-active-hover: var(--eudia-colors-primary-circuit-green-650);
+  /* Brand gradient defaults (teal). Override these to retheme gradients. */
+  --brand-gradient-start: #117082;
+  --brand-gradient-end: #29bbbe;
+  --brand-gradient-secondary-start: rgba(17, 112, 130, 0.18);
+  --brand-gradient-secondary-end: rgba(41, 187, 190, 0.18);
+  --brand-gradient-secondary-hover-start: rgba(17, 112, 130, 0.3);
+  --brand-gradient-secondary-hover-end: rgba(41, 187, 190, 0.3);
+  --base-secondary-terra-coral: var(--eudia-colors-secondary-terra-coral-500);
+  --base-secondary-laurel-shade: var(--eudia-colors-secondary-laurel-shade-500);
+  --base-secondary-clarity-depth: var(
+    --eudia-colors-secondary-clarity-depth-500
+  );
+  --base-secondary-golden-amber: var(--eudia-colors-secondary-golden-amber-500);
+  --base-secondary-lavendar-integrity: var(
+    --eudia-colors-secondary-lavender-integrity-500
+  );
+  --base-secondary-siren-blush: var(--eudia-colors-secondary-siren-blush-500);
+  --base-ring: var(--eudia-colors-neutral-slate-integrity-350);
+  --base-ring-primary: var(--eudia-colors-primary-circuit-green-650);
+  --base-ring-secondary: var(--eudia-colors-neutral-slate-integrity-250);
+  --base-ring-destructive: var(--eudia-colors-alert-high-risk-200);
+  --base-ring-offset: var(--eudia-colors-neutral-cloud-veil-0);
+  --base-secondary: var(--eudia-colors-neutral-slate-integrity-100);
+  --base-secondary-foreground: var(--base-foreground);
+  --base-secondary-hover: var(--eudia-colors-neutral-slate-integrity-150);
+  --base-secondary-active: var(--eudia-colors-neutral-slate-integrity-200);
+  --base-secondary-active-hover: var(
+    --eudia-colors-neutral-slate-integrity-250
+  );
+  --base-ghost-foreground: var(--base-foreground);
+  --base-ghost-hover: var(--eudia-colors-neutral-slate-integrity-50);
+  --base-ghost-active: var(--eudia-colors-neutral-slate-integrity-100);
+  --base-ghost-active-hover: var(--eudia-colors-neutral-slate-integrity-150);
+  --base-link: var(--base-primary);
+  --base-destructive: var(--eudia-colors-alert-high-risk-500);
+  --base-destructive-foreground: var(--base-primary-foreground);
+  --base-destructive-text: var(--eudia-colors-alert-high-risk-600);
+  --base-destructive-secondary: var(--eudia-colors-alert-high-risk-50);
+  --base-destructive-secondary-hover: var(--eudia-colors-alert-high-risk-100);
+  --base-destructive-secondary-active: var(--eudia-colors-alert-high-risk-150);
+  --base-destructive-secondary-active-hover: var(
+    --eudia-colors-alert-high-risk-200
+  );
+  --base-moderate: var(--eudia-colors-alert-moderate-risk-500);
+  --base-moderate-text: var(--eudia-colors-alert-moderate-risk-650);
+  --base-moderate-secondary: var(--eudia-colors-alert-moderate-risk-50);
+  --base-moderate-secondary-hover: var(--eudia-colors-alert-moderate-risk-100);
+  --base-lowrisk: var(--eudia-colors-alert-low-risk-500);
+  --base-lowrisk-text: var(--eudia-colors-alert-low-risk-750);
+  --base-lowrisk-secondary: var(--eudia-colors-alert-low-risk-50);
+  --base-lowrisk-secondary-hover: var(--eudia-colors-alert-low-risk-100);
+  --base-success: var(--eudia-colors-alert-success-500);
+  --base-success-text: var(--eudia-colors-alert-success-700);
+  --base-success-secondary: var(--eudia-colors-alert-success-50);
+  --base-success-secondary-hover: var(--eudia-colors-alert-success-100);
+  --base-information: var(--eudia-colors-alert-information-500);
+  --base-information-text: var(--eudia-colors-alert-information-700);
+  --base-information-secondary: var(--eudia-colors-alert-information-50);
+  --base-information-secondary-hover: var(--eudia-colors-alert-information-100);
+  --base-chart-1: var(--eudia-colors-primary-circuit-green-350);
+  --base-chart-2: var(--eudia-colors-secondary-terra-coral-350);
+  --base-chart-3: var(--eudia-colors-secondary-clarity-depth-350);
+  --base-chart-4: var(--eudia-colors-secondary-laurel-shade-350);
+  --base-chart-5: var(--eudia-colors-secondary-golden-amber-350);
+  --base-chart-6: var(--eudia-colors-secondary-lavender-integrity-350);
+  --base-main-border: var(--eudia-colors-neutral-slate-integrity-50);
+  --base-sidebar-background: var(
+    --eudia-colors-neutral-warm-slate-integrity-50
+  );
+  --base-sidebar-foreground: var(--eudia-colors-neutral-orion-veil-700);
+  --base-sidebar-muted-foreground: var(--eudia-colors-neutral-orion-veil-600);
+  --base-sidebar-primary: var(--base-primary);
+  --base-sidebar-primary-foreground: var(--base-primary-foreground);
+  --base-sidebar-hover: var(--eudia-colors-neutral-warm-slate-integrity-100);
+  --base-sidebar-active: var(--eudia-colors-neutral-warm-slate-integrity-150);
+  --base-sidebar-active-foreground: var(--base-sidebar-foreground);
+  --base-sidebar-border: var(--eudia-colors-neutral-cloud-veil-200);
+  --base-sidebar-ring: var(--eudia-colors-neutral-warm-slate-integrity-200);
+  --base-sec-sidebar-hover: var(--eudia-colors-neutral-slate-integrity-50);
+  --base-sec-sidebar-active: var(--eudia-colors-neutral-slate-integrity-100);
+  --base-sec-sidebar-border: var(--eudia-colors-neutral-slate-integrity-150);
+  --base-sec-sidebar-ring: var(--eudia-colors-neutral-slate-integrity-150);
+  --base-tab-hover: var(--eudia-colors-neutral-cloud-veil-150);
+  --base-tab-hover-secondary: var(--eudia-colors-neutral-cloud-veil-250);
+  --base-tab-lined-hover: var(--eudia-colors-neutral-slate-integrity-50);
+  --base-tab-lined-hover-secondary: var(
+    --eudia-colors-neutral-slate-integrity-100
+  );
+  --base-tab: var(--eudia-colors-neutral-cloud-veil-100);
+  --base-tab-secondary: var(--eudia-colors-neutral-cloud-veil-200);
+  --base-favorite: var(--eudia-colors-alert-eudia-yellow-500);
+}
+
+/* --- Component tokens + backward-compat palette aliases --- */
+:root {
+  --radius: 0.625rem;
+  --background: var(--base-background);
+  --foreground: var(--base-foreground);
+  --card: var(--base-card);
+  --card-foreground: var(--base-card-foreground);
+  --popover: var(--base-popover);
+  --popover-foreground: var(--base-popover-foreground);
+  --primary: var(--base-primary);
+  --primary-foreground: var(--base-primary-foreground);
+  --secondary: var(--base-secondary);
+  --secondary-foreground: var(--base-secondary-foreground);
+  --ghost-hover: var(--base-ghost-hover);
+  --ghost-active: var(--base-ghost-active);
+  --ghost-active-hover: var(--base-ghost-active-hover);
+  --muted: var(--base-muted);
+  --muted-foreground: var(--base-muted-foreground);
+  --accent: var(--base-muted);
+  --accent-foreground: var(--base-muted-foreground);
+  --destructive: var(--base-destructive);
+  --destructive-foreground: var(--base-destructive-foreground);
+  --destructive-secondary: var(--base-destructive-secondary);
+  --destructive-text: var(--base-destructive-text);
+  --border: var(--base-border);
+  --input: var(--base-input);
+  --ring: var(--base-ring);
+  --chart-1: var(--base-chart-1);
+  --chart-2: var(--base-chart-2);
+  --chart-3: var(--base-chart-3);
+  --chart-4: var(--base-chart-4);
+  --chart-5: var(--base-chart-5);
+  --chart-6: var(--base-chart-6);
+  --sidebar: var(--base-sidebar-background);
+  --sidebar-foreground: var(--base-sidebar-foreground);
+  --sidebar-primary: var(--base-sidebar-primary);
+  --sidebar-primary-foreground: var(--base-sidebar-primary-foreground);
+  --sidebar-accent: var(--base-sidebar-active);
+  --sidebar-accent-foreground: var(--base-sidebar-active-foreground);
+  --sidebar-active: var(--base-sidebar-active);
+  --sidebar-active-foreground: var(--base-sidebar-active-foreground);
+  --sidebar-border: var(--base-sidebar-border);
+  --sidebar-ring: var(--base-sidebar-ring);
+  --sidebar-muted-foreground: var(--base-sidebar-muted-foreground);
+  --sidebar-hover: var(--base-sidebar-hover);
+  --sec-sidebar-hover: var(--base-sec-sidebar-hover);
+  --sec-sidebar-active: var(--base-sec-sidebar-active);
+  --sec-sidebar-border: var(--base-sec-sidebar-border);
+  --table-header: var(--cloud-veil-50);
+  --table-row-hover: var(--cloud-veil-50);
+  --table-row-selected: var(--cloud-veil-100);
+  --list-item-hover: var(--cloud-veil-50);
+  --list-item-selected: var(--slate-integrity-100);
+  --favorite: var(--base-favorite);
+  --thumbnail-background-1: oklch(0.89 0.0157 67.62);
+  --thumbnail-background-2: oklch(0.8287 0.0614 284.98);
+  --thumbnail-background-3: oklch(0.8706 0.0356 214.52);
+  --thumbnail-background-4: oklch(0.8299 0.0637 250.77);
+
+  /* palette aliases → primitives (backward compat) */
+  --circuit-green-50: var(--eudia-colors-primary-circuit-green-50);
+  --circuit-green-100: var(--eudia-colors-primary-circuit-green-100);
+  --circuit-green-150: var(--eudia-colors-primary-circuit-green-150);
+  --circuit-green-200: var(--eudia-colors-primary-circuit-green-200);
+  --circuit-green-250: var(--eudia-colors-primary-circuit-green-250);
+  --circuit-green-300: var(--eudia-colors-primary-circuit-green-300);
+  --circuit-green-350: var(--eudia-colors-primary-circuit-green-350);
+  --circuit-green-400: var(--eudia-colors-primary-circuit-green-400);
+  --circuit-green-450: var(--eudia-colors-primary-circuit-green-450);
+  --circuit-green-500: var(--eudia-colors-primary-circuit-green-500);
+  --circuit-green-550: var(--eudia-colors-primary-circuit-green-550);
+  --circuit-green-600: var(--eudia-colors-primary-circuit-green-600);
+  --circuit-green-650: var(--eudia-colors-primary-circuit-green-650);
+  --circuit-green-700: var(--eudia-colors-primary-circuit-green-700);
+  --circuit-green-750: var(--eudia-colors-primary-circuit-green-750);
+  --circuit-green-800: var(--eudia-colors-primary-circuit-green-800);
+  --circuit-green-850: var(--eudia-colors-primary-circuit-green-850);
+  --circuit-green-900: var(--eudia-colors-primary-circuit-green-900);
+  --circuit-green-950: var(--eudia-colors-primary-circuit-green-950);
+  --terra-coral-50: var(--eudia-colors-secondary-terra-coral-50);
+  --terra-coral-100: var(--eudia-colors-secondary-terra-coral-100);
+  --terra-coral-150: var(--eudia-colors-secondary-terra-coral-150);
+  --terra-coral-200: var(--eudia-colors-secondary-terra-coral-200);
+  --terra-coral-250: var(--eudia-colors-secondary-terra-coral-250);
+  --terra-coral-300: var(--eudia-colors-secondary-terra-coral-300);
+  --terra-coral-350: var(--eudia-colors-secondary-terra-coral-350);
+  --terra-coral-400: var(--eudia-colors-secondary-terra-coral-400);
+  --terra-coral-450: var(--eudia-colors-secondary-terra-coral-450);
+  --terra-coral-500: var(--eudia-colors-secondary-terra-coral-500);
+  --terra-coral-550: var(--eudia-colors-secondary-terra-coral-550);
+  --terra-coral-600: var(--eudia-colors-secondary-terra-coral-600);
+  --terra-coral-650: var(--eudia-colors-secondary-terra-coral-650);
+  --terra-coral-700: var(--eudia-colors-secondary-terra-coral-700);
+  --terra-coral-750: var(--eudia-colors-secondary-terra-coral-750);
+  --terra-coral-800: var(--eudia-colors-secondary-terra-coral-800);
+  --terra-coral-850: var(--eudia-colors-secondary-terra-coral-850);
+  --terra-coral-900: var(--eudia-colors-secondary-terra-coral-900);
+  --terra-coral-950: var(--eudia-colors-secondary-terra-coral-950);
+  --clarity-depth-50: var(--eudia-colors-secondary-clarity-depth-50);
+  --clarity-depth-100: var(--eudia-colors-secondary-clarity-depth-100);
+  --clarity-depth-150: var(--eudia-colors-secondary-clarity-depth-150);
+  --clarity-depth-200: var(--eudia-colors-secondary-clarity-depth-200);
+  --clarity-depth-250: var(--eudia-colors-secondary-clarity-depth-250);
+  --clarity-depth-300: var(--eudia-colors-secondary-clarity-depth-300);
+  --clarity-depth-350: var(--eudia-colors-secondary-clarity-depth-350);
+  --clarity-depth-400: var(--eudia-colors-secondary-clarity-depth-400);
+  --clarity-depth-450: var(--eudia-colors-secondary-clarity-depth-450);
+  --clarity-depth-500: var(--eudia-colors-secondary-clarity-depth-500);
+  --clarity-depth-550: var(--eudia-colors-secondary-clarity-depth-550);
+  --clarity-depth-600: var(--eudia-colors-secondary-clarity-depth-600);
+  --clarity-depth-650: var(--eudia-colors-secondary-clarity-depth-650);
+  --clarity-depth-700: var(--eudia-colors-secondary-clarity-depth-700);
+  --clarity-depth-750: var(--eudia-colors-secondary-clarity-depth-750);
+  --clarity-depth-800: var(--eudia-colors-secondary-clarity-depth-800);
+  --clarity-depth-850: var(--eudia-colors-secondary-clarity-depth-850);
+  --clarity-depth-900: var(--eudia-colors-secondary-clarity-depth-900);
+  --clarity-depth-950: var(--eudia-colors-secondary-clarity-depth-950);
+  --golden-amber-50: var(--eudia-colors-secondary-golden-amber-50);
+  --golden-amber-100: var(--eudia-colors-secondary-golden-amber-100);
+  --golden-amber-150: var(--eudia-colors-secondary-golden-amber-150);
+  --golden-amber-200: var(--eudia-colors-secondary-golden-amber-200);
+  --golden-amber-250: var(--eudia-colors-secondary-golden-amber-250);
+  --golden-amber-300: var(--eudia-colors-secondary-golden-amber-300);
+  --golden-amber-350: var(--eudia-colors-secondary-golden-amber-350);
+  --golden-amber-400: var(--eudia-colors-secondary-golden-amber-400);
+  --golden-amber-450: var(--eudia-colors-secondary-golden-amber-450);
+  --golden-amber-500: var(--eudia-colors-secondary-golden-amber-500);
+  --golden-amber-550: var(--eudia-colors-secondary-golden-amber-550);
+  --golden-amber-600: var(--eudia-colors-secondary-golden-amber-600);
+  --golden-amber-650: var(--eudia-colors-secondary-golden-amber-650);
+  --golden-amber-700: var(--eudia-colors-secondary-golden-amber-700);
+  --golden-amber-750: var(--eudia-colors-secondary-golden-amber-750);
+  --golden-amber-800: var(--eudia-colors-secondary-golden-amber-800);
+  --golden-amber-850: var(--eudia-colors-secondary-golden-amber-850);
+  --golden-amber-900: var(--eudia-colors-secondary-golden-amber-900);
+  --golden-amber-950: var(--eudia-colors-secondary-golden-amber-950);
+  --laurel-shade-50: var(--eudia-colors-secondary-laurel-shade-50);
+  --laurel-shade-100: var(--eudia-colors-secondary-laurel-shade-100);
+  --laurel-shade-150: var(--eudia-colors-secondary-laurel-shade-150);
+  --laurel-shade-200: var(--eudia-colors-secondary-laurel-shade-200);
+  --laurel-shade-250: var(--eudia-colors-secondary-laurel-shade-250);
+  --laurel-shade-300: var(--eudia-colors-secondary-laurel-shade-300);
+  --laurel-shade-350: var(--eudia-colors-secondary-laurel-shade-350);
+  --laurel-shade-400: var(--eudia-colors-secondary-laurel-shade-400);
+  --laurel-shade-450: var(--eudia-colors-secondary-laurel-shade-450);
+  --laurel-shade-500: var(--eudia-colors-secondary-laurel-shade-500);
+  --laurel-shade-550: var(--eudia-colors-secondary-laurel-shade-550);
+  --laurel-shade-600: var(--eudia-colors-secondary-laurel-shade-600);
+  --laurel-shade-650: var(--eudia-colors-secondary-laurel-shade-650);
+  --laurel-shade-700: var(--eudia-colors-secondary-laurel-shade-700);
+  --laurel-shade-750: var(--eudia-colors-secondary-laurel-shade-750);
+  --laurel-shade-800: var(--eudia-colors-secondary-laurel-shade-800);
+  --laurel-shade-850: var(--eudia-colors-secondary-laurel-shade-850);
+  --laurel-shade-900: var(--eudia-colors-secondary-laurel-shade-900);
+  --laurel-shade-950: var(--eudia-colors-secondary-laurel-shade-950);
+  --lavender-integrity-50: var(--eudia-colors-secondary-lavender-integrity-50);
+  --lavender-integrity-100: var(
+    --eudia-colors-secondary-lavender-integrity-100
+  );
+  --lavender-integrity-150: var(
+    --eudia-colors-secondary-lavender-integrity-150
+  );
+  --lavender-integrity-200: var(
+    --eudia-colors-secondary-lavender-integrity-200
+  );
+  --lavender-integrity-250: var(
+    --eudia-colors-secondary-lavender-integrity-250
+  );
+  --lavender-integrity-300: var(
+    --eudia-colors-secondary-lavender-integrity-300
+  );
+  --lavender-integrity-350: var(
+    --eudia-colors-secondary-lavender-integrity-350
+  );
+  --lavender-integrity-400: var(
+    --eudia-colors-secondary-lavender-integrity-400
+  );
+  --lavender-integrity-450: var(
+    --eudia-colors-secondary-lavender-integrity-450
+  );
+  --lavender-integrity-500: var(
+    --eudia-colors-secondary-lavender-integrity-500
+  );
+  --lavender-integrity-550: var(
+    --eudia-colors-secondary-lavender-integrity-550
+  );
+  --lavender-integrity-600: var(
+    --eudia-colors-secondary-lavender-integrity-600
+  );
+  --lavender-integrity-650: var(
+    --eudia-colors-secondary-lavender-integrity-650
+  );
+  --lavender-integrity-700: var(
+    --eudia-colors-secondary-lavender-integrity-700
+  );
+  --lavender-integrity-750: var(
+    --eudia-colors-secondary-lavender-integrity-750
+  );
+  --lavender-integrity-800: var(
+    --eudia-colors-secondary-lavender-integrity-800
+  );
+  --lavender-integrity-850: var(
+    --eudia-colors-secondary-lavender-integrity-850
+  );
+  --lavender-integrity-900: var(
+    --eudia-colors-secondary-lavender-integrity-900
+  );
+  --lavender-integrity-950: var(
+    --eudia-colors-secondary-lavender-integrity-950
+  );
+  --cloud-veil-0: var(--eudia-colors-neutral-cloud-veil-0);
+  --cloud-veil-50: var(--eudia-colors-neutral-cloud-veil-50);
+  --cloud-veil-100: var(--eudia-colors-neutral-cloud-veil-100);
+  --cloud-veil-150: var(--eudia-colors-neutral-cloud-veil-150);
+  --cloud-veil-200: var(--eudia-colors-neutral-cloud-veil-200);
+  --cloud-veil-250: var(--eudia-colors-neutral-cloud-veil-250);
+  --cloud-veil-300: var(--eudia-colors-neutral-cloud-veil-300);
+  --cloud-veil-350: var(--eudia-colors-neutral-cloud-veil-350);
+  --cloud-veil-400: var(--eudia-colors-neutral-cloud-veil-400);
+  --cloud-veil-450: var(--eudia-colors-neutral-cloud-veil-450);
+  --cloud-veil-500: var(--eudia-colors-neutral-cloud-veil-500);
+  --cloud-veil-550: var(--eudia-colors-neutral-cloud-veil-550);
+  --cloud-veil-600: var(--eudia-colors-neutral-cloud-veil-600);
+  --cloud-veil-650: var(--eudia-colors-neutral-cloud-veil-650);
+  --cloud-veil-700: var(--eudia-colors-neutral-cloud-veil-700);
+  --cloud-veil-750: var(--eudia-colors-neutral-cloud-veil-750);
+  --cloud-veil-800: var(--eudia-colors-neutral-cloud-veil-800);
+  --cloud-veil-850: var(--eudia-colors-neutral-cloud-veil-850);
+  --cloud-veil-900: var(--eudia-colors-neutral-cloud-veil-900);
+  --cloud-veil-950: var(--eudia-colors-neutral-cloud-veil-950);
+  --cloud-veil-1000: var(--eudia-colors-neutral-cloud-veil-1000);
+  --warm-slate-integrity-50: var(
+    --eudia-colors-neutral-warm-slate-integrity-50
+  );
+  --warm-slate-integrity-100: var(
+    --eudia-colors-neutral-warm-slate-integrity-100
+  );
+  --warm-slate-integrity-150: var(
+    --eudia-colors-neutral-warm-slate-integrity-150
+  );
+  --warm-slate-integrity-200: var(
+    --eudia-colors-neutral-warm-slate-integrity-200
+  );
+  --warm-slate-integrity-250: var(
+    --eudia-colors-neutral-warm-slate-integrity-250
+  );
+  --warm-slate-integrity-300: var(
+    --eudia-colors-neutral-warm-slate-integrity-300
+  );
+  --warm-slate-integrity-350: var(
+    --eudia-colors-neutral-warm-slate-integrity-350
+  );
+  --warm-slate-integrity-400: var(
+    --eudia-colors-neutral-warm-slate-integrity-400
+  );
+  --warm-slate-integrity-450: var(
+    --eudia-colors-neutral-warm-slate-integrity-450
+  );
+  --warm-slate-integrity-500: var(
+    --eudia-colors-neutral-warm-slate-integrity-500
+  );
+  --warm-slate-integrity-550: var(
+    --eudia-colors-neutral-warm-slate-integrity-550
+  );
+  --warm-slate-integrity-600: var(
+    --eudia-colors-neutral-warm-slate-integrity-600
+  );
+  --warm-slate-integrity-650: var(
+    --eudia-colors-neutral-warm-slate-integrity-650
+  );
+  --warm-slate-integrity-700: var(
+    --eudia-colors-neutral-warm-slate-integrity-700
+  );
+  --warm-slate-integrity-750: var(
+    --eudia-colors-neutral-warm-slate-integrity-750
+  );
+  --warm-slate-integrity-800: var(
+    --eudia-colors-neutral-warm-slate-integrity-800
+  );
+  --warm-slate-integrity-850: var(
+    --eudia-colors-neutral-warm-slate-integrity-850
+  );
+  --warm-slate-integrity-900: var(
+    --eudia-colors-neutral-warm-slate-integrity-900
+  );
+  --warm-slate-integrity-950: var(
+    --eudia-colors-neutral-warm-slate-integrity-950
+  );
+  --siren-blush-50: var(--eudia-colors-secondary-siren-blush-50);
+  --siren-blush-100: var(--eudia-colors-secondary-siren-blush-100);
+  --siren-blush-150: var(--eudia-colors-secondary-siren-blush-150);
+  --siren-blush-200: var(--eudia-colors-secondary-siren-blush-200);
+  --siren-blush-250: var(--eudia-colors-secondary-siren-blush-250);
+  --siren-blush-300: var(--eudia-colors-secondary-siren-blush-300);
+  --siren-blush-350: var(--eudia-colors-secondary-siren-blush-350);
+  --siren-blush-400: var(--eudia-colors-secondary-siren-blush-400);
+  --siren-blush-450: var(--eudia-colors-secondary-siren-blush-450);
+  --siren-blush-500: var(--eudia-colors-secondary-siren-blush-500);
+  --siren-blush-550: var(--eudia-colors-secondary-siren-blush-550);
+  --siren-blush-600: var(--eudia-colors-secondary-siren-blush-600);
+  --siren-blush-650: var(--eudia-colors-secondary-siren-blush-650);
+  --siren-blush-700: var(--eudia-colors-secondary-siren-blush-700);
+  --siren-blush-750: var(--eudia-colors-secondary-siren-blush-750);
+  --siren-blush-800: var(--eudia-colors-secondary-siren-blush-800);
+  --siren-blush-850: var(--eudia-colors-secondary-siren-blush-850);
+  --siren-blush-900: var(--eudia-colors-secondary-siren-blush-900);
+  --siren-blush-950: var(--eudia-colors-secondary-siren-blush-950);
+  --slate-integrity-50: var(--eudia-colors-neutral-slate-integrity-50);
+  --slate-integrity-100: var(--eudia-colors-neutral-slate-integrity-100);
+  --slate-integrity-150: var(--eudia-colors-neutral-slate-integrity-150);
+  --slate-integrity-200: var(--eudia-colors-neutral-slate-integrity-200);
+  --slate-integrity-250: var(--eudia-colors-neutral-slate-integrity-250);
+  --slate-integrity-300: var(--eudia-colors-neutral-slate-integrity-300);
+  --slate-integrity-350: var(--eudia-colors-neutral-slate-integrity-350);
+  --slate-integrity-400: var(--eudia-colors-neutral-slate-integrity-400);
+  --slate-integrity-450: var(--eudia-colors-neutral-slate-integrity-450);
+  --slate-integrity-500: var(--eudia-colors-neutral-slate-integrity-500);
+  --slate-integrity-550: var(--eudia-colors-neutral-slate-integrity-550);
+  --slate-integrity-600: var(--eudia-colors-neutral-slate-integrity-600);
+  --slate-integrity-650: var(--eudia-colors-neutral-slate-integrity-650);
+  --slate-integrity-700: var(--eudia-colors-neutral-slate-integrity-700);
+  --slate-integrity-750: var(--eudia-colors-neutral-slate-integrity-750);
+  --slate-integrity-800: var(--eudia-colors-neutral-slate-integrity-800);
+  --slate-integrity-850: var(--eudia-colors-neutral-slate-integrity-850);
+  --slate-integrity-900: var(--eudia-colors-neutral-slate-integrity-900);
+  --slate-integrity-950: var(--eudia-colors-neutral-slate-integrity-950);
+  --orion-veil-50: var(--eudia-colors-neutral-orion-veil-50);
+  --orion-veil-100: var(--eudia-colors-neutral-orion-veil-100);
+  --orion-veil-150: var(--eudia-colors-neutral-orion-veil-150);
+  --orion-veil-200: var(--eudia-colors-neutral-orion-veil-200);
+  --orion-veil-250: var(--eudia-colors-neutral-orion-veil-250);
+  --orion-veil-300: var(--eudia-colors-neutral-orion-veil-300);
+  --orion-veil-350: var(--eudia-colors-neutral-orion-veil-350);
+  --orion-veil-400: var(--eudia-colors-neutral-orion-veil-400);
+  --orion-veil-450: var(--eudia-colors-neutral-orion-veil-450);
+  --orion-veil-500: var(--eudia-colors-neutral-orion-veil-500);
+  --orion-veil-550: var(--eudia-colors-neutral-orion-veil-550);
+  --orion-veil-600: var(--eudia-colors-neutral-orion-veil-600);
+  --orion-veil-650: var(--eudia-colors-neutral-orion-veil-650);
+  --orion-veil-700: var(--eudia-colors-neutral-orion-veil-700);
+  --orion-veil-750: var(--eudia-colors-neutral-orion-veil-750);
+  --orion-veil-800: var(--eudia-colors-neutral-orion-veil-800);
+  --orion-veil-850: var(--eudia-colors-neutral-orion-veil-850);
+  --orion-veil-900: var(--eudia-colors-neutral-orion-veil-900);
+  --orion-veil-950: var(--eudia-colors-neutral-orion-veil-950);
+  --information-50: var(--eudia-colors-alert-information-50);
+  --information-100: var(--eudia-colors-alert-information-100);
+  --information-150: var(--eudia-colors-alert-information-150);
+  --information-200: var(--eudia-colors-alert-information-200);
+  --information-250: var(--eudia-colors-alert-information-250);
+  --information-300: var(--eudia-colors-alert-information-300);
+  --information-350: var(--eudia-colors-alert-information-350);
+  --information-400: var(--eudia-colors-alert-information-400);
+  --information-450: var(--eudia-colors-alert-information-450);
+  --information-500: var(--eudia-colors-alert-information-500);
+  --information-550: var(--eudia-colors-alert-information-550);
+  --information-600: var(--eudia-colors-alert-information-600);
+  --information-650: var(--eudia-colors-alert-information-650);
+  --information-700: var(--eudia-colors-alert-information-700);
+  --information-750: var(--eudia-colors-alert-information-750);
+  --information-800: var(--eudia-colors-alert-information-800);
+  --information-850: var(--eudia-colors-alert-information-850);
+  --information-900: var(--eudia-colors-alert-information-900);
+  --information-950: var(--eudia-colors-alert-information-950);
+  --success-50: var(--eudia-colors-alert-success-50);
+  --success-100: var(--eudia-colors-alert-success-100);
+  --success-150: var(--eudia-colors-alert-success-150);
+  --success-200: var(--eudia-colors-alert-success-200);
+  --success-250: var(--eudia-colors-alert-success-250);
+  --success-300: var(--eudia-colors-alert-success-300);
+  --success-350: var(--eudia-colors-alert-success-350);
+  --success-400: var(--eudia-colors-alert-success-400);
+  --success-450: var(--eudia-colors-alert-success-450);
+  --success-500: var(--eudia-colors-alert-success-500);
+  --success-550: var(--eudia-colors-alert-success-550);
+  --success-600: var(--eudia-colors-alert-success-600);
+  --success-650: var(--eudia-colors-alert-success-650);
+  --success-700: var(--eudia-colors-alert-success-700);
+  --success-750: var(--eudia-colors-alert-success-750);
+  --success-800: var(--eudia-colors-alert-success-800);
+  --success-850: var(--eudia-colors-alert-success-850);
+  --success-900: var(--eudia-colors-alert-success-900);
+  --success-950: var(--eudia-colors-alert-success-950);
+  --alert-low-risk-50: var(--eudia-colors-alert-low-risk-50);
+  --alert-low-risk-100: var(--eudia-colors-alert-low-risk-100);
+  --alert-low-risk-150: var(--eudia-colors-alert-low-risk-150);
+  --alert-low-risk-200: var(--eudia-colors-alert-low-risk-200);
+  --alert-low-risk-250: var(--eudia-colors-alert-low-risk-250);
+  --alert-low-risk-300: var(--eudia-colors-alert-low-risk-300);
+  --alert-low-risk-350: var(--eudia-colors-alert-low-risk-350);
+  --alert-low-risk-400: var(--eudia-colors-alert-low-risk-400);
+  --alert-low-risk-450: var(--eudia-colors-alert-low-risk-450);
+  --alert-low-risk-500: var(--eudia-colors-alert-low-risk-500);
+  --alert-low-risk-550: var(--eudia-colors-alert-low-risk-550);
+  --alert-low-risk-600: var(--eudia-colors-alert-low-risk-600);
+  --alert-low-risk-650: var(--eudia-colors-alert-low-risk-650);
+  --alert-low-risk-700: var(--eudia-colors-alert-low-risk-700);
+  --alert-low-risk-750: var(--eudia-colors-alert-low-risk-750);
+  --alert-low-risk-800: var(--eudia-colors-alert-low-risk-800);
+  --alert-low-risk-850: var(--eudia-colors-alert-low-risk-850);
+  --alert-low-risk-900: var(--eudia-colors-alert-low-risk-900);
+  --alert-low-risk-950: var(--eudia-colors-alert-low-risk-950);
+  --alert-moderate-risk-50: var(--eudia-colors-alert-moderate-risk-50);
+  --alert-moderate-risk-100: var(--eudia-colors-alert-moderate-risk-100);
+  --alert-moderate-risk-150: var(--eudia-colors-alert-moderate-risk-150);
+  --alert-moderate-risk-200: var(--eudia-colors-alert-moderate-risk-200);
+  --alert-moderate-risk-250: var(--eudia-colors-alert-moderate-risk-250);
+  --alert-moderate-risk-300: var(--eudia-colors-alert-moderate-risk-300);
+  --alert-moderate-risk-350: var(--eudia-colors-alert-moderate-risk-350);
+  --alert-moderate-risk-400: var(--eudia-colors-alert-moderate-risk-400);
+  --alert-moderate-risk-450: var(--eudia-colors-alert-moderate-risk-450);
+  --alert-moderate-risk-500: var(--eudia-colors-alert-moderate-risk-500);
+  --alert-moderate-risk-550: var(--eudia-colors-alert-moderate-risk-550);
+  --alert-moderate-risk-600: var(--eudia-colors-alert-moderate-risk-600);
+  --alert-moderate-risk-650: var(--eudia-colors-alert-moderate-risk-650);
+  --alert-moderate-risk-700: var(--eudia-colors-alert-moderate-risk-700);
+  --alert-moderate-risk-750: var(--eudia-colors-alert-moderate-risk-750);
+  --alert-moderate-risk-800: var(--eudia-colors-alert-moderate-risk-800);
+  --alert-moderate-risk-850: var(--eudia-colors-alert-moderate-risk-850);
+  --alert-moderate-risk-900: var(--eudia-colors-alert-moderate-risk-900);
+  --alert-moderate-risk-950: var(--eudia-colors-alert-moderate-risk-950);
+  --alert-high-risk-50: var(--eudia-colors-alert-high-risk-50);
+  --alert-high-risk-100: var(--eudia-colors-alert-high-risk-100);
+  --alert-high-risk-150: var(--eudia-colors-alert-high-risk-150);
+  --alert-high-risk-200: var(--eudia-colors-alert-high-risk-200);
+  --alert-high-risk-250: var(--eudia-colors-alert-high-risk-250);
+  --alert-high-risk-300: var(--eudia-colors-alert-high-risk-300);
+  --alert-high-risk-350: var(--eudia-colors-alert-high-risk-350);
+  --alert-high-risk-400: var(--eudia-colors-alert-high-risk-400);
+  --alert-high-risk-450: var(--eudia-colors-alert-high-risk-450);
+  --alert-high-risk-500: var(--eudia-colors-alert-high-risk-500);
+  --alert-high-risk-550: var(--eudia-colors-alert-high-risk-550);
+  --alert-high-risk-600: var(--eudia-colors-alert-high-risk-600);
+  --alert-high-risk-650: var(--eudia-colors-alert-high-risk-650);
+  --alert-high-risk-700: var(--eudia-colors-alert-high-risk-700);
+  --alert-high-risk-750: var(--eudia-colors-alert-high-risk-750);
+  --alert-high-risk-800: var(--eudia-colors-alert-high-risk-800);
+  --alert-high-risk-850: var(--eudia-colors-alert-high-risk-850);
+  --alert-high-risk-900: var(--eudia-colors-alert-high-risk-900);
+  --alert-high-risk-950: var(--eudia-colors-alert-high-risk-950);
+  --destructive-secondary-hover: var(--base-destructive-secondary-active-hover);
+  --moderate: var(--base-moderate);
+  --moderate-text: var(--base-moderate-text);
+  --moderate-secondary: var(--base-moderate-secondary);
+  --moderate-secondary-hover: var(--base-moderate-secondary-hover);
+  --success: var(--base-success);
+  --success-text: var(--base-success-text);
+  --success-secondary: var(--base-success-secondary);
+  --success-secondary-hover: var(--base-success-secondary-hover);
+  --information: var(--base-information);
+  --information-text: var(--base-information-text);
+  --information-secondary: var(--base-information-secondary);
+  --information-secondary-hover: var(--base-information-secondary-hover);
+  --lowrisk: var(--base-lowrisk);
+  --lowrisk-text: var(--base-lowrisk-text);
+  --lowrisk-secondary: var(--base-lowrisk-secondary);
+  --lowrisk-secondary-hover: var(--base-lowrisk-secondary-hover);
+  --plugin-background: oklch(0.9831 0.0034 67.78);
+  --hover: var(--base-hover);
+  --primary-hover: var(--base-primary-hover);
+}

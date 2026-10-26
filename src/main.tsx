@@ -10,6 +10,8 @@ import './opportunities.css';
 import './update-dialog.css';
 import './discovery-v1.css';
 import './discovery-v2.css';
+import './discovery-v3.css';
+import './horizon-scanning.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

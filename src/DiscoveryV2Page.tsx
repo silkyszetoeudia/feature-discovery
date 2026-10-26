@@ -1,5 +1,6 @@
 import {useEffect, useRef, useState, type CSSProperties, type FormEvent, type ReactElement} from 'react';
 import AppShellUpdate from './AppShellUpdate';
+import {V3Walkthrough} from './DiscoveryV3Page';
 import PlayButton from './PlayButton';
 
 const ASSET = '/assistant';
@@ -294,7 +295,7 @@ function Walkthrough({onClose}: {onClose: () => void}): ReactElement {
   );
 }
 
-export default function DiscoveryV2Page(): ReactElement {
+export default function DiscoveryV2Page({variant = 'v2'}: {variant?: 'v2' | 'v3'}): ReactElement {
   const [draft, setDraft] = useState('');
   const [walkthrough, setWalkthrough] = useState(false);
   const canSend = draft.trim().length > 0;
@@ -313,7 +314,7 @@ export default function DiscoveryV2Page(): ReactElement {
   };
 
   return (
-    <div className="proto-card assist disc-v1 disc-v2">
+    <div className={variant === 'v3' ? 'proto-card assist disc-v1 disc-v2 disc-v3' : 'proto-card assist disc-v1 disc-v2'}>
       <div className="assist__toolbar">
         <div className="assist__toolbar-end">
           <button className="assist-ghost" type="button">
@@ -395,7 +396,13 @@ export default function DiscoveryV2Page(): ReactElement {
         </div>
       </div>
 
-      {walkthrough ? <Walkthrough onClose={() => setWalkthrough(false)} /> : null}
+      {walkthrough ? (
+        variant === 'v3' ? (
+          <V3Walkthrough onClose={() => setWalkthrough(false)} />
+        ) : (
+          <Walkthrough onClose={() => setWalkthrough(false)} />
+        )
+      ) : null}
     </div>
   );
 }

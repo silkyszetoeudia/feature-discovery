@@ -1,0 +1,966 @@
+/* Horizon Scanning discovery. Three fanned cards, each with its own hover loop. */
+
+.hs-discover {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  font: inherit;
+  margin: 0 auto 72px;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.hs-discover:focus-visible {
+  outline: 2px solid #1366b6;
+  outline-offset: 4px;
+}
+
+.hs-stack {
+  display: block;
+  height: 212px;
+  margin: 0 auto;
+  position: relative;
+  width: 640px;
+}
+
+.hs-card {
+  background: #fff;
+  border: 1px solid #2b75bd;
+  border-radius: 10px;
+  box-shadow:
+    0 2px 2px rgba(0, 0, 0, 0.06),
+    0 4px 3px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 164px;
+  padding: 6px 6px 10px;
+  position: absolute;
+  text-align: left;
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  width: 176px;
+}
+
+.hs-card--scope {
+  left: 24px;
+  top: 38px;
+  transform: rotate(-6deg);
+  z-index: 1;
+}
+
+.hs-card--judgment {
+  left: 440px;
+  top: 30px;
+  transform: rotate(6deg);
+  z-index: 1;
+}
+
+.hs-card--schedule {
+  left: 232px;
+  top: 12px;
+  z-index: 2;
+}
+
+.hs-card--scope:hover {
+  transform: rotate(-6deg) translateY(-4px);
+}
+
+.hs-card--judgment:hover {
+  transform: rotate(6deg) translateY(-4px);
+}
+
+.hs-card--schedule:hover {
+  transform: translateY(-6px);
+}
+
+.hs-art {
+  border: 1px solid #dce2e8;
+  border-radius: 6px;
+  display: block;
+  flex: none;
+  height: 88px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.hs-art--scope,
+.hs-art--schedule {
+  background: #eef0f4;
+}
+
+.hs-art--judgment {
+  background: #eff0f1;
+}
+
+.hs-tags {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  left: 50%;
+  position: absolute;
+  top: 22px;
+  transform: translateX(-50%);
+}
+
+.hs-tag-row {
+  display: flex;
+  gap: 5px;
+}
+
+.hs-chip {
+  background: #fff;
+  border: 1px solid #d4d1cd;
+  border-radius: 999px;
+  color: #5c574f;
+  display: inline-flex;
+  font-size: 8px;
+  font-weight: 500;
+  line-height: normal;
+  padding: 3px 7px;
+  transition:
+    background 240ms ease,
+    border-color 240ms ease,
+    color 240ms ease;
+  white-space: nowrap;
+}
+
+.hs-chip.is-on {
+  background: #e7f0f8;
+  border-color: #2b75bd;
+  color: #1366b6;
+}
+
+.hs-tabs {
+  align-items: center;
+  background: #d4d5d5;
+  border-radius: 6px;
+  display: flex;
+  gap: 2px;
+  height: 23px;
+  left: 50%;
+  padding: 2.5px;
+  position: absolute;
+  top: 32px;
+  transform: translateX(-50%);
+}
+
+.hs-tab {
+  align-items: center;
+  border: 0.4px solid transparent;
+  border-radius: 5px;
+  color: #948c81;
+  display: inline-flex;
+  font-size: 8.8px;
+  font-weight: 500;
+  height: 100%;
+  justify-content: center;
+  line-height: 13px;
+  padding: 0 8px;
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    color 220ms ease;
+  white-space: nowrap;
+}
+
+.hs-tab.is-on {
+  background: #fff;
+  border-color: #a1c2e2;
+  box-shadow:
+    0 0.6px 0.6px rgba(0, 0, 0, 0.06),
+    0 0.6px 0.9px rgba(0, 0, 0, 0.1);
+  color: #1366b6;
+}
+
+.hs-report {
+  background: #fff;
+  border: 1px solid #948c81;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(15, 41, 69, 0.08);
+  height: 90px;
+  left: 17px;
+  overflow: hidden;
+  position: absolute;
+  top: 13px;
+  width: 160px;
+}
+
+.hs-line,
+.hs-cite {
+  position: absolute;
+}
+
+.hs-line {
+  border-radius: 2px;
+  display: block;
+  height: 4px;
+  transform-origin: left center;
+}
+
+.hs-line--h1,
+.hs-line--h2 {
+  background: #b8b2ab;
+  border-radius: 2.5px;
+  height: 5px;
+  left: 9px;
+}
+
+.hs-line--h1 {
+  top: 8px;
+  width: 96px;
+}
+
+.hs-line--h2 {
+  top: 49px;
+  width: 84px;
+}
+
+.hs-line--link,
+.hs-line--s1,
+.hs-line--s2,
+.hs-line--s3 {
+  background: #dfdcd9;
+  left: 15px;
+}
+
+.hs-line--link {
+  top: 18px;
+  width: 70px;
+}
+
+.hs-line--s1 {
+  top: 27px;
+  width: 104px;
+}
+
+.hs-line--s2 {
+  top: 36px;
+  width: 74px;
+}
+
+.hs-line--s3 {
+  top: 59px;
+  width: 66px;
+}
+
+.hs-cite {
+  align-items: center;
+  background: #71a3d3;
+  border-radius: 5px;
+  color: #fff;
+  display: flex;
+  font-size: 6px;
+  font-weight: 500;
+  height: 10px;
+  justify-content: center;
+  line-height: normal;
+  width: 10px;
+}
+
+.hs-cite--1 {
+  left: 93px;
+  top: 33px;
+}
+
+.hs-cite--2 {
+  left: 85px;
+  top: 56px;
+}
+
+.hs-cite--3 {
+  left: 97px;
+  top: 56px;
+}
+
+.hs-report.is-building .hs-line {
+  animation: hs-line-in 170ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hs-report.is-building .hs-cite {
+  animation: hs-pop 110ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+}
+
+/* The animation shorthand above resets delay, so these must be at least as specific. */
+.hs-report.is-building .hs-line--h1 { animation-delay: 0ms; }
+.hs-report.is-building .hs-line--link { animation-delay: 45ms; }
+.hs-report.is-building .hs-line--s1 { animation-delay: 90ms; }
+.hs-report.is-building .hs-line--s2 { animation-delay: 135ms; }
+.hs-report.is-building .hs-line--h2 { animation-delay: 190ms; }
+.hs-report.is-building .hs-line--s3 { animation-delay: 235ms; }
+.hs-report.is-building .hs-cite--1 { animation-delay: 300ms; }
+.hs-report.is-building .hs-cite--2 { animation-delay: 490ms; }
+.hs-report.is-building .hs-cite--3 { animation-delay: 680ms; }
+
+@keyframes hs-line-in {
+  from {
+    opacity: 0;
+    transform: scaleX(0.12);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes hs-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hs-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 4px;
+}
+
+.hs-copy strong {
+  color: #122933;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.hs-copy span {
+  color: #5c7079;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.hs-stage {
+  justify-content: center;
+}
+
+.hs-column {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  width: 100%;
+}
+
+.hs-center {
+  --hs-video-gap: 28px;
+  align-items: center;
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+}
+
+.hs-actions {
+  flex-shrink: 0;
+  margin-top: 28px;
+}
+
+/* Closed until the copy hold and a real frame. The clip stays 0px tall, so there is no empty well. */
+.hs .disc-v2-reveal {
+  justify-items: center;
+}
+
+.hs .disc-v2-reveal .hs-video {
+  aspect-ratio: 3342 / 2160;
+  background: transparent;
+  flex: none;
+  margin: var(--hs-video-gap, 28px) auto 0;
+  max-width: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.hs-video iframe {
+  border: 0;
+  display: block;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.hs-video.is-blocked button.disc-play {
+  opacity: 1;
+}
+
+.hs-actions {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.hs-actions.is-on {
+  animation: hs-actions-in 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+@keyframes hs-actions-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hs-later {
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  color: #122933;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  height: 36px;
+  line-height: 20px;
+  padding: 8px 10px;
+}
+
+.hs-later:hover {
+  background: rgb(from var(--clarity-depth-500, #1366b6) r g b / 0.1);
+}
+
+.hs-later:focus-visible,
+.hs-close:focus-visible {
+  outline: 2px solid #1366b6;
+  outline-offset: 2px;
+}
+
+.hs .disc-v2-dialog {
+  position: relative;
+}
+
+.hs .disc-v2-fit {
+  z-index: 1;
+}
+
+.hs-close {
+  align-items: center;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  height: 32px;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  right: 19px;
+  top: 19px;
+  width: 32px;
+  z-index: 2;
+}
+
+.hs-close:hover {
+  background: var(--base-ghost-hover, rgba(18, 41, 51, 0.06));
+}
+
+.hs-close img {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .hs-stack {
+    transform: scale(0.78);
+    transform-origin: top center;
+  }
+}
+
+/* Day 0 welcome. Same fanned cards; the column builds on at page load. */
+
+.hs-day0 {
+  --hs-day0-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --hs-day0-shift: 0px;
+  --hs-day0-icon-at: 760ms;
+  --hs-day0-hold: 400ms;
+  --hs-day0-title-at: calc(var(--hs-day0-icon-at) + var(--hs-day0-hold));
+  --hs-day0-sub-at: calc(var(--hs-day0-title-at) + 360ms);
+  --hs-day0-cards-at: calc(var(--hs-day0-sub-at) + 720ms);
+  --hs-day0-card-stagger: 110ms;
+  --hs-day0-card-ms: 320ms;
+  /* Same rise as Assistant #2's star follow: 680ms, then a 40ms beat plus --drag. */
+  --hs-day0-rise-ms: 680ms;
+  --hs-day0-cta-at: var(--hs-day0-cards-at);
+}
+
+.hs-day0-panel {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+  min-width: 0;
+  overflow: auto;
+  width: 100%;
+}
+
+.hs-day0-copy {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: min(622px, 100%);
+}
+
+.hs-day0-stage {
+  align-items: center;
+  animation: hs-day0-rise var(--hs-day0-rise-ms) var(--hs-day0-ease) var(--hs-day0-cards-at) both;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@keyframes hs-day0-rise {
+  from {
+    transform: translateY(var(--hs-day0-shift));
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+.hs-day0-mark {
+  display: block;
+  flex: none;
+  height: 72px;
+  overflow: visible;
+  position: relative;
+  width: 72px;
+}
+
+.hs-day0-stars {
+  left: 50%;
+  overflow: visible;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Assistant #2 swell, then the same anchor/follow rise. Fade is the Day0 addition. */
+.hs-day0 .opp-star {
+  animation:
+    opp-star-swell 380ms cubic-bezier(0.4, 0, 0.2, 1) var(--star-lag, 0ms) both,
+    hs-day0-star-anchor var(--hs-day0-rise-ms) var(--hs-day0-ease) var(--hs-day0-cards-at) forwards,
+    hs-day0-star-follow var(--hs-day0-rise-ms) var(--hs-day0-ease) calc(var(--hs-day0-cards-at) + 40ms + var(--drag, 0ms)) forwards,
+    hs-day0-star-out calc(var(--hs-day0-rise-ms) - 40ms - var(--drag, 0ms)) var(--hs-day0-ease) calc(var(--hs-day0-cards-at) + 40ms + var(--drag, 0ms)) forwards;
+  animation-composition: replace, add, add, replace;
+}
+
+@keyframes hs-day0-star-anchor {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(var(--hs-day0-shift));
+  }
+}
+
+@keyframes hs-day0-star-follow {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(var(--hs-day0-shift) * -1));
+  }
+}
+
+@keyframes hs-day0-star-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.hs-day0-mark svg {
+  display: block;
+  overflow: visible;
+}
+
+.hs-day0-square {
+  animation: hs-day0-square 200ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.hs-day0-square:nth-child(1) { animation-delay: 0ms; }
+.hs-day0-square:nth-child(2) { animation-delay: 28ms; }
+.hs-day0-square:nth-child(3) { animation-delay: 56ms; }
+.hs-day0-square:nth-child(4) { animation-delay: 84ms; }
+.hs-day0-square:nth-child(5) { animation-delay: 112ms; }
+.hs-day0-square:nth-child(6) { animation-delay: 140ms; }
+.hs-day0-square:nth-child(7) { animation-delay: 168ms; }
+.hs-day0-square:nth-child(8) { animation-delay: 196ms; }
+.hs-day0-square:nth-child(9) { animation-delay: 224ms; }
+
+@keyframes hs-day0-square {
+  from {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hs-day0-clock-face {
+  animation: hs-day0-face 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes hs-day0-face {
+  from {
+    opacity: 0;
+    transform: scale(0.72);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hs-day0-hand {
+  transform-box: fill-box;
+}
+
+.hs-day0-hand--minute {
+  transform-origin: 1.4px 9.4px;
+}
+
+.hs-day0-hand--hour {
+  transform-origin: 1.55px 6.5px;
+}
+
+.hs-day0-hand--minute {
+  animation: hs-day0-minute var(--hs-day0-icon-at) ease-in-out both;
+}
+
+.hs-day0-hand--hour {
+  animation: hs-day0-hour var(--hs-day0-icon-at) ease-in-out both;
+}
+
+@keyframes hs-day0-minute {
+  0% {
+    opacity: 0;
+    transform: rotate(300deg);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hs-day0-hour {
+  0% {
+    opacity: 0;
+    transform: rotate(115deg);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(120deg);
+  }
+}
+
+.hs-day0-title {
+  color: #122933;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  max-width: 540px;
+  text-align: center;
+}
+
+.hs-day0-sub {
+  color: #5c7079;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: -12px 0 0;
+  max-width: 622px;
+  text-align: center;
+}
+
+.hs-day0-rest-slot {
+  display: grid;
+  grid-template-rows: 1fr;
+  margin-top: 40px;
+  overflow: visible;
+  position: relative;
+  width: min(640px, 100%);
+}
+
+.hs-day0-rest-sizer {
+  min-height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.hs-day0-rest {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  left: 0;
+  overflow: visible;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.hs-day0-cta-slot {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.hs-day0-cta-space {
+  height: 40px;
+}
+
+.hs-day0-cards {
+  container-type: inline-size;
+  display: flex;
+  flex: none;
+  justify-content: center;
+  overflow: visible;
+  width: min(640px, 100%);
+}
+
+.hs-day0 .hs-card {
+  animation: hs-day0-card-in var(--hs-day0-card-ms) var(--hs-day0-ease) both;
+}
+
+.hs-day0 .hs-card--scope {
+  animation-delay: var(--hs-day0-cards-at);
+}
+
+.hs-day0 .hs-card--schedule {
+  animation-delay: calc(var(--hs-day0-cards-at) + var(--hs-day0-card-stagger));
+}
+
+.hs-day0 .hs-card--judgment {
+  animation-delay: calc(var(--hs-day0-cards-at) + var(--hs-day0-card-stagger) * 2);
+}
+
+@keyframes hs-day0-card-in {
+  from {
+    opacity: 0;
+    scale: 0.92;
+    translate: 0 8px;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+  }
+}
+
+.hs-day0-cards .hs-stack {
+  transform: none;
+  zoom: min(1, 100cqi / 640px);
+}
+
+.proto-app .hs-day0-cta {
+  align-items: center;
+  appearance: none;
+  background: #2b75bd;
+  border: 0;
+  border-radius: 8px;
+  box-shadow:
+    0 1px 1.5px rgba(0, 0, 0, 0.1),
+    0 1px 1px rgba(0, 0, 0, 0.06);
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  flex: none;
+  font-size: 16px;
+  font-weight: 500;
+  gap: 6px;
+  height: 40px;
+  justify-content: center;
+  line-height: 24px;
+  padding: 8px 24px;
+}
+
+.hs-day0-cta:hover {
+  filter: brightness(0.96);
+}
+
+.hs-day0-cta:focus-visible {
+  outline: 2px solid #1366b6;
+  outline-offset: 2px;
+}
+
+.hs-day0-cta img {
+  display: block;
+  flex: none;
+}
+
+.hs-day0-piece {
+  animation: disc-v2-in 320ms var(--hs-day0-ease) both;
+}
+
+.hs-day0-piece--badge {
+  animation-delay: 0ms;
+}
+
+.hs-day0-piece--title {
+  animation-delay: var(--hs-day0-title-at);
+}
+
+.hs-day0-piece--sub {
+  animation-delay: var(--hs-day0-sub-at);
+}
+
+.hs-day0-cta {
+  animation: disc-v2-in 360ms var(--hs-day0-ease) var(--hs-day0-cta-at) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hs-card,
+  .hs-chip,
+  .hs-tab,
+  .hs-report.is-building .hs-line,
+  .hs-report.is-building .hs-cite {
+    animation: none;
+    transition: none;
+  }
+
+  .hs-report.is-building .hs-line,
+  .hs-report.is-building .hs-cite {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* V2's reduced-motion rule opens every reveal immediately, and its is-on
+     animation is specific enough to keep running. Snap this row open instead. */
+  .hs .disc-v2-reveal,
+  .hs .disc-v2-reveal.is-on,
+  .hs .disc-v2-reveal__clip,
+  .hs .disc-v2-reveal.is-on .disc-v2-reveal__clip {
+    animation: none;
+  }
+
+  .hs .disc-v2-reveal {
+    grid-template-rows: 0fr;
+  }
+
+  .hs .disc-v2-reveal.is-on {
+    grid-template-rows: 1fr;
+  }
+
+  .hs .disc-v2-reveal__clip {
+    overflow: hidden;
+  }
+
+  .hs .disc-v2-reveal.is-on .disc-v2-reveal__clip {
+    overflow: visible;
+  }
+
+  .hs-actions.is-on {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+
+  .hs-day0-piece {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hs-day0-square,
+  .hs-day0-clock-face {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hs-day0 .hs-card,
+  .hs-day0-cta {
+    animation: none;
+    opacity: 1;
+    scale: 1;
+    translate: none;
+  }
+
+  .hs-day0-stage {
+    animation: none;
+    transform: none;
+  }
+
+  .hs-day0 .opp-star {
+    animation: none;
+    opacity: 0;
+  }
+
+  .hs-day0-hand--minute {
+    animation: none;
+    transform: rotate(360deg);
+  }
+
+  .hs-day0-hand--hour {
+    animation: none;
+    transform: rotate(120deg);
+  }
+}

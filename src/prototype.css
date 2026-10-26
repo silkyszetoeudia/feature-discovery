@@ -985,6 +985,7 @@
   flex-shrink: 0;
   margin-left: auto;
   transform: rotate(-90deg);
+  transition: transform 160ms ease;
 }
 
 .proto-nav-btn__chevron.is-open {
@@ -993,6 +994,10 @@
 
 .proto-nav-btn--sub {
   padding-left: 32px;
+}
+
+.proto-nav-btn--nested {
+  padding-left: 48px;
 }
 
 .proto-nav-group--footer {
@@ -1106,6 +1111,7 @@
 .proto-app--collapsed .proto-nav-btn__badge,
 .proto-app--collapsed .proto-nav-btn__chevron,
 .proto-app--collapsed .proto-nav-btn--sub,
+.proto-app--collapsed .proto-nav-btn--nested,
 .proto-app--collapsed .proto-switcher__label,
 .proto-app--collapsed .proto-user__meta {
   display: none;
@@ -5171,4 +5177,16 @@
   .files-chevron {
     transition: none;
   }
+}
+
+/* Standalone /animation route: the shell update, nothing else. */
+.proto-anim-page {
+  align-items: center;
+  background: #fff;
+  box-sizing: border-box;
+  container-type: size;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
 }

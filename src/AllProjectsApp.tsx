@@ -1,6 +1,9 @@
 import {useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactElement, type ReactNode} from 'react';
+import AppShellUpdate from './AppShellUpdate';
 import AssistantPage from './AssistantPage';
 import DiscoveryV2Page from './DiscoveryV2Page';
+import HorizonScanningDay0Page from './HorizonScanningDay0Page';
+import HorizonScanningPage from './HorizonScanningPage';
 import OpportunitiesPage from './OpportunitiesPage';
 
 function clsx(...parts: Array<string | false | null | undefined>) {
@@ -12,16 +15,20 @@ const ICONS = '/icons';
 type ProjectKind = 'general' | 'compliance' | 'ma' | 'litigation';
 type TypeFilter = 'favorites' | ProjectKind;
 type Ownership = 'all' | 'owned' | 'shared';
-type Screen = 'projects' | 'assistant' | 'assistant2' | 'discovery2' | 'update' | 'frame' | 'opportunities';
+type Screen = 'projects' | 'assistant' | 'assistant2' | 'discovery2' | 'discovery3' | 'horizon' | 'horizonDay0' | 'update' | 'frame' | 'opportunities' | 'animation';
 
 const SCREEN_PATH: Record<Screen, string> = {
   assistant: '/assistant',
   assistant2: '/assistant-2',
   discovery2: '/discovery',
+  discovery3: '/discovery-v3',
+  horizon: '/horizon-scanning',
+  horizonDay0: '/horizon-scanning-day0',
   update: '/update-dialog',
   frame: '/frame-shrink',
   projects: '/projects',
   opportunities: '/opportunities',
+  animation: '/animation',
 };
 
 function screenFromPath(pathname: string): Screen {
@@ -450,6 +457,7 @@ function FigmaNavIcon({name}: {name: keyof typeof FIGMA_NAV_ICONS}): ReactElemen
 function NavButton({
   active,
   sub,
+  nested,
   sketch,
   children,
   expanded,
@@ -457,6 +465,7 @@ function NavButton({
 }: {
   active?: boolean;
   sub?: boolean;
+  nested?: boolean;
   sketch?: boolean;
   children: ReactNode;
   expanded?: boolean;
@@ -467,6 +476,7 @@ function NavButton({
       className={clsx(
         'proto-nav-btn',
         sub && 'proto-nav-btn--sub',
+        nested && 'proto-nav-btn--nested',
         sketch && 'proto-nav-btn--sketch',
         active && 'is-active',
       )}
@@ -721,9 +731,25 @@ export default function AllProjectsApp(): ReactElement {
   const [draftType, setDraftType] = useState<ProjectKind>('general');
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [screen, setScreenState] = useState<Screen>(() => screenFromPath(window.location.pathname));
+  const [floatUiOpen, setFloatUiOpen] = useState(() => {
+    const initial = screenFromPath(window.location.pathname);
+    return initial === 'discovery2' || initial === 'discovery3';
+  });
+  const [oldOpen, setOldOpen] = useState(() => {
+    const initial = screenFromPath(window.location.pathname);
+    return (
+      initial === 'assistant2' ||
+      initial === 'discovery2' ||
+      initial === 'discovery3' ||
+      initial === 'update'
+    );
+  });
   const [assistantKey] = useState(0);
   const [assistantAltKey, setAssistantAltKey] = useState(0);
   const [discovery2Key, setDiscovery2Key] = useState(0);
+  const [discovery3Key, setDiscovery3Key] = useState(0);
+  const [horizonKey, setHorizonKey] = useState(0);
+  const [horizonDay0Key, setHorizonDay0Key] = useState(0);
   const [updateKey, setUpdateKey] = useState(0);
   const [frameKey] = useState(0);
 
@@ -744,6 +770,12 @@ export default function AllProjectsApp(): ReactElement {
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
   }, []);
+
+  useEffect(() => {
+    if (screen === 'discovery2' || screen === 'discovery3') {
+      setFloatUiOpen(true);
+    }
+  }, [screen]);
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
@@ -820,6 +852,14 @@ export default function AllProjectsApp(): ReactElement {
     litigation: 'Litigation',
   };
 
+  if (screen === 'animation') {
+    return (
+      <div className="proto-anim-page">
+        <AppShellUpdate style={{width: 'min(100cqw, calc(100cqh * 16 / 9))'}} />
+      </div>
+    );
+  }
+
   return (
     <div className={clsx('proto-app', collapsed && 'proto-app--collapsed')}>
       <aside className="proto-sidebar">
@@ -843,35 +883,95 @@ export default function AllProjectsApp(): ReactElement {
 
         <div className="proto-sidebar__main">
           <div className="proto-nav-group">
+            <NavButton expanded={oldOpen} onClick={() => setOldOpen((open) => !open)}>
+              <LucideIcon name={oldOpen ? 'folder-open' : 'folder'} size={16} draw={false} />
+              <span className="proto-nav-btn__label">OLD</span>
+              <span className={clsx('proto-nav-btn__chevron', oldOpen && 'is-open')}>
+                <LucideIcon name="chevron-down" size={16} draw={false} />
+              </span>
+            </NavButton>
+            {oldOpen ? (
+              <>
+                <NavButton
+                  sub
+                  expanded={floatUiOpen}
+                  onClick={() => setFloatUiOpen((open) => !open)}
+                >
+                  <img src="/assistant/dialog-sparkle.svg" alt="" width={16} height={16} />
+                  <span className="proto-nav-btn__label">FloatUI-DisFeat</span>
+                  <span className={clsx('proto-nav-btn__chevron', floatUiOpen && 'is-open')}>
+                    <LucideIcon name="chevron-down" size={16} draw={false} />
+                  </span>
+                </NavButton>
+                {floatUiOpen ? (
+                  <>
+                    <NavButton
+                      nested
+                      active={screen === 'discovery2'}
+                      onClick={() => {
+                        setScreen('discovery2');
+                        setDiscovery2Key((value) => value + 1);
+                      }}
+                    >
+                      <img src="/assistant/dialog-sparkle.svg" alt="" width={16} height={16} />
+                      <span className="proto-nav-btn__label">Discovery V2</span>
+                    </NavButton>
+                    <NavButton
+                      nested
+                      active={screen === 'discovery3'}
+                      onClick={() => {
+                        setScreen('discovery3');
+                        setDiscovery3Key((value) => value + 1);
+                      }}
+                    >
+                      <img src="/assistant/dialog-sparkle.svg" alt="" width={16} height={16} />
+                      <span className="proto-nav-btn__label">Discovery v3</span>
+                    </NavButton>
+                  </>
+                ) : null}
+                <NavButton
+                  sub
+                  active={screen === 'assistant2'}
+                  onClick={() => {
+                    setScreen('assistant2');
+                    setAssistantAltKey((value) => value + 1);
+                  }}
+                >
+                  <AskAiIcon />
+                  <span className="proto-nav-btn__label">Assistant #2</span>
+                </NavButton>
+                <NavButton
+                  sub
+                  active={screen === 'update'}
+                  onClick={() => {
+                    setScreen('update');
+                    setUpdateKey((value) => value + 1);
+                  }}
+                >
+                  <img src="/assistant/dialog-sparkle.svg" alt="" width={16} height={16} />
+                  <span className="proto-nav-btn__label">Update Dialog</span>
+                </NavButton>
+              </>
+            ) : null}
             <NavButton
-              active={screen === 'assistant2'}
+              active={screen === 'horizon'}
               onClick={() => {
-                setScreen('assistant2');
-                setAssistantAltKey((value) => value + 1);
+                setScreen('horizon');
+                setHorizonKey((value) => value + 1);
               }}
             >
               <AskAiIcon />
-              <span className="proto-nav-btn__label">Assistant #2</span>
+              <span className="proto-nav-btn__label">Horizon Scanning DisFeat</span>
             </NavButton>
             <NavButton
-              active={screen === 'discovery2'}
+              active={screen === 'horizonDay0'}
               onClick={() => {
-                setScreen('discovery2');
-                setDiscovery2Key((value) => value + 1);
+                setScreen('horizonDay0');
+                setHorizonDay0Key((value) => value + 1);
               }}
             >
-              <img src="/assistant/dialog-sparkle.svg" alt="" width={16} height={16} />
-              <span className="proto-nav-btn__label">Discovery V2</span>
-            </NavButton>
-            <NavButton
-              active={screen === 'update'}
-              onClick={() => {
-                setScreen('update');
-                setUpdateKey((value) => value + 1);
-              }}
-            >
-              <img src="/assistant/dialog-sparkle.svg" alt="" width={16} height={16} />
-              <span className="proto-nav-btn__label">Update Dialog</span>
+              <LucideIcon name="calendar-clock" size={16} draw={false} />
+              <span className="proto-nav-btn__label">Horizon Scanning Day0</span>
             </NavButton>
           </div>
 
@@ -901,6 +1001,12 @@ export default function AllProjectsApp(): ReactElement {
           <AssistantPage key={assistantAltKey} alt onFind={() => setScreen('opportunities')} />
         ) : screen === 'discovery2' ? (
           <DiscoveryV2Page key={discovery2Key} />
+        ) : screen === 'discovery3' ? (
+          <DiscoveryV2Page key={discovery3Key} variant="v3" />
+        ) : screen === 'horizon' ? (
+          <HorizonScanningPage key={horizonKey} />
+        ) : screen === 'horizonDay0' ? (
+          <HorizonScanningDay0Page key={horizonDay0Key} />
         ) : screen === 'opportunities' ? (
           <OpportunitiesPage />
         ) : screen === 'update' ? (

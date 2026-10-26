@@ -1,0 +1,164 @@
+/* Discovery v3. The dialog chrome is already on screen.
+   The blue stage stays empty, then the old layout appears in the
+   center, then the new layout builds in beside it. */
+
+.disc-v3 .disc-scrim,
+.disc-v3 .disc-dialog {
+  animation: none;
+}
+
+.disc-v3 .disc-dialog {
+  position: relative;
+}
+
+.disc-v3-close {
+  align-items: center;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  line-height: 0;
+  margin: 0;
+  padding: 4px;
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  z-index: 3;
+}
+
+.disc-v3-close:hover {
+  background: var(--base-ghost-hover);
+}
+
+.disc-v3-close:focus-visible {
+  outline: 2px solid #1366b6;
+  outline-offset: 2px;
+}
+
+.disc-v3-close img {
+  display: block;
+}
+
+.disc-v3-stage {
+  align-items: center;
+  background: linear-gradient(211deg, #1366b6 3.5%, #0a335b 100%);
+  border-radius: 12px;
+  box-shadow:
+    0 15px 22.5px -4.5px rgba(0, 0, 0, 0.1),
+    0 6px 9px -3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  height: 675px;
+  justify-content: center;
+  margin: 28px 0;
+  overflow: hidden;
+  position: relative;
+  width: 1200px;
+}
+
+.disc-v3-compare {
+  align-items: start;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 529px 529px;
+  width: 1082px;
+}
+
+.disc-v3-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  min-width: 0;
+}
+
+.disc-v3-label {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  margin: 0;
+  text-align: center;
+}
+
+.disc-v3-col img {
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.disc-v3-caption {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+}
+
+.disc-v3-caption strong {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.disc-v3-caption span {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.disc-v3-col--old {
+  opacity: 0;
+  transform: translateX(276px);
+  transition:
+    opacity 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.disc-v3-stage.is-old .disc-v3-col--old,
+.disc-v3-stage.is-both .disc-v3-col--old {
+  opacity: 1;
+}
+
+.disc-v3-stage.is-both .disc-v3-col--old {
+  transform: translateX(0);
+}
+
+.disc-v3-col--new .disc-v3-label,
+.disc-v3-col--new img,
+.disc-v3-caption {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.disc-v3-stage.is-both .disc-v3-col--new .disc-v3-label,
+.disc-v3-stage.is-both .disc-v3-col--new img,
+.disc-v3-stage.is-both .disc-v3-caption {
+  opacity: 1;
+  transform: none;
+}
+
+.disc-v3-stage.is-both .disc-v3-col--new img {
+  transition-delay: 80ms;
+}
+
+.disc-v3-stage.is-both .disc-v3-caption {
+  transition-delay: 200ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .disc-v3-col--old,
+  .disc-v3-col--new .disc-v3-label,
+  .disc-v3-col--new img,
+  .disc-v3-caption {
+    transition: none;
+  }
+}
